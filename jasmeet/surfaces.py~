@@ -47,5 +47,3 @@ surfaces['BA Radius-5'] = ZCylinder(x0=0.0, y0=0.0, R=0.43688)
 surfaces['BA Radius-6'] = ZCylinder(x0=0.0, y0=0.0, R=0.48387)
 surfaces['BA Radius-7'] = ZCylinder(x0=0.0, y0=0.0, R=0.56134)
 surfaces['BA Radius-8'] = ZCylinder(x0=0.0, y0=0.0, R=0.60198)
-
-
