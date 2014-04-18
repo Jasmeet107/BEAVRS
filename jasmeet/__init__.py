@@ -1,4 +1,4 @@
 from surfaces import surfaces
-#from pin_cells import * 
+from pincells import pincells 
 #from lattices import * 
 
