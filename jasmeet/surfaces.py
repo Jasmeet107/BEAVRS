@@ -39,13 +39,13 @@ surfaces['IT Radius-2'] = Circle(x=0.0, y=0.0, radius=0.48387)
 #######################  Burnable Absorber Pin Cell  ###########################
 ################################################################################
 
-surfaces['BA Radius-1'] = Circle(x=0.0, y=0.0, radius=0.21400)
-surfaces['BA Radius-2'] = Circle(x=0.0, y=0.0, radius=0.23051)
-surfaces['BA Radius-3'] = Circle(x=0.0, y=0.0, radius=0.24130)
-surfaces['BA Radius-4'] = Circle(x=0.0, y=0.0, radius=0.42672)
-surfaces['BA Radius-5'] = Circle(x=0.0, y=0.0, radius=0.43688)
-surfaces['BA Radius-6'] = Circle(x=0.0, y=0.0, radius=0.48387)
-surfaces['BA Radius-7'] = Circle(x=0.0, y=0.0, radius=0.56134)
-surfaces['BA Radius-8'] = Circle(x=0.0, y=0.0, radius=0.60198)
+surfaces['BP Radius-1'] = Circle(x=0.0, y=0.0, radius=0.21400)
+surfaces['BP Radius-2'] = Circle(x=0.0, y=0.0, radius=0.23051)
+surfaces['BP Radius-3'] = Circle(x=0.0, y=0.0, radius=0.24130)
+surfaces['BP Radius-4'] = Circle(x=0.0, y=0.0, radius=0.42672)
+surfaces['BP Radius-5'] = Circle(x=0.0, y=0.0, radius=0.43688)
+surfaces['BP Radius-6'] = Circle(x=0.0, y=0.0, radius=0.48387)
+surfaces['BP Radius-7'] = Circle(x=0.0, y=0.0, radius=0.56134)
+surfaces['BP Radius-8'] = Circle(x=0.0, y=0.0, radius=0.60198)
 
 
