@@ -33,7 +33,7 @@ class Casmo(object):
     for line in f:
       if '[Usage Note]' in line:
         tokens = line.split()
-        energy_groups = tokens[5]
+        energy_groups = int(tokens[5])
         break
     f.close()
     return energy_groups
@@ -71,7 +71,7 @@ class Casmo(object):
     # Specify in documentation that xs should be ALLCAPSONEWORD
 
     if xs_name != 'SIGS':
-      xs_array = numpy.zeros(self._num_micro_regions, self._energy_groups)
+      xs_array = numpy.zeros((self._num_micro_regions, self._energy_groups))
       f = open(self._directory + self._filename, 'r')
       counter = 0
       for line in f:
@@ -85,7 +85,7 @@ class Casmo(object):
       return xs_array
 
     if xs_name == 'SIGS':
-      xs_array = numpy.zeros(self._num_micro_regions, self._energy_groups, self._energy_groups)
+      xs_array = numpy.zeros((self._num_micro_regions, self._energy_groups, self._energy_groups))
       f = open(self._directory + self._filename, "r")
       cur_region = 0
       cur_group = 0
@@ -99,8 +99,8 @@ class Casmo(object):
           cur_group = 0
         if cur_region == self._num_micro_regions:
           break
-
-    f.close()
+      f.close()
+      return xs_array
 
   def setXS(self, xs_name, xs_array):
     '''Takes name of cross-section and numpy array with cross-section values,
@@ -144,7 +144,7 @@ class Casmo(object):
   def importAllXS(self):
     xs_list = ['SIGA', 'SIGD', 'SIGT', 'SIGF', 'SIGNF', 'SIGS', 'CHI']
     for xs_name in xs_list:
-      self.importXS(self, xs_name)
+      self.importXS(xs_name)
 
   def parseWidth(self):
     '''Parses half_widths of one fourth the full array from CASMO.'''
@@ -271,8 +271,8 @@ class Casmo(object):
   def importPinPowers(self): self.setPinPowers(self.parsePinPowers())
 
   def stringCellTypeArray(self):
-    half_width = self.parsehalf_widths()
-    full_width = self.fullhalf_widths()
+    full_width = self.parseWidth()
+    half_width = full_width/2+1
     cell_type_array = numpy.zeros((full_width,full_width), dtype=numpy.int32)
     quadrant4 = numpy.zeros((half_width,half_width), dtype=numpy.int32)
 
@@ -303,7 +303,7 @@ class Casmo(object):
     #id of 1 corresponds to fuel (string of fuel)
     #id of 2 corresponds to guide tube (string of gt)
     #id of 3 corresponds to burnable poison (string of bp)
-    string_cell_type_array = numpy.zeros((full_width,full_width), dtype=numpy.int32)
+    string_cell_type_array = numpy.zeros((full_width,full_width), dtype=numpy.str)
     for i, row in enumerate(cell_type_array):
       for j, cell in enumerate(row):
         if cell_type_array[i,j] == 1:
@@ -384,8 +384,10 @@ class Casmo(object):
     f.close()
     
 
-  def xsToHDF5(self, assembly, directory = '/casmo-data'):
-    f = h5py.File(directory + '/' + assembly + '-materials.hdf5')
+  def xsToHDF5(self, assembly, directory = 'casmo-data'):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    f = h5py.File(directory + '/' + assembly + '-materials.hdf5', 'w')
 
     f.attrs['Energy Groups'] = self._energy_groups
 
@@ -397,5 +399,5 @@ class Casmo(object):
       material.create_dataset('Nu Fission XS', data=self._signf[region, :])
       material.create_dataset('Scattering XS', data=numpy.ravel(self._sigs[region, :, :]))
       material.create_dataset('Dif Coefficient', data=self._sigd[region, :])
-      material.create_dataset('Chi', data=self._chi)
+      material.create_dataset('Chi', data=self._chi[region,:])
     f.close()
