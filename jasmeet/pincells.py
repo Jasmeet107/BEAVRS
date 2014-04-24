@@ -1,12 +1,4 @@
-from openmoc import *
-import openmoc.log as log #stores data printed during simulation
-import openmoc.plotter as plotter
-import openmoc.materialize as materialize
-import openmoc.process as process
-import h5py
-import numpy as np
-import random as rand
-
+from openmoc import CellBasic, universe_id
 from surfaces import surfaces
 #import materials
 
