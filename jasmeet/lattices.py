@@ -1,380 +1,403 @@
 from openmoc import Lattice, universe_id
-import openmoc.plotter as plotter
 from pincells import pincells
 
 lattices = dict() #creates dictionary of lattices
 pinPitch = 1.25984
 
-for assemblyType in ['16fuel', '24fuel', '31fuel']: 
 
-  lattices[assemblyType] = {}
+################################################################################
+#############################  0 Burnable Poisons ##############################
+################################################################################
 
-  ################################################################################
-  #############################  0 Burnable Poisons ##############################
-  ################################################################################
-  a = pincells[assemblyType]['uid']
-  b = pincells['guidetube']['uid']
-  c = pincells['instube']['uid']
-  d = pincells['bp']['uid']
+a = pincells['16fuel']['uid']
+b = pincells['guidetube']['uid']
+c = pincells['instube']['uid']
+d = pincells['bp']['uid']
 
-  lattices[assemblyType]['0BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['0BP'].setLatticeCells([
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-                      [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
-                      [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
+lattices['1.6-0BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['1.6-0BP'].setLatticeCells([
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+                    [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+                    [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
 
-  ################################################################################
-  #############################  4 Burnable Poisons ##############################
-  ################################################################################
-  a = pincells[assemblyType]['uid']
-  b = pincells['guidetube']['uid']
-  c = pincells['instube']['uid']
-  d = pincells['bp']['uid']
+a = pincells['24fuel']['uid']
+b = pincells['guidetube']['uid']
+c = pincells['instube']['uid']
+d = pincells['bp']['uid']
 
-  lattices[assemblyType]['4BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['4BP'].setLatticeCells([
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-                      [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-                      [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
+lattices['2.4-0BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['2.4-0BP'].setLatticeCells([
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+                    [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+                    [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
 
-  ################################################################################
-  #############################  *6 Burnable Poisons ##############################
-  ################################################################################
-  a = pincells[assemblyType]['uid']
-  b = pincells['guidetube']['uid']
-  c = pincells['instube']['uid']
-  d = pincells['bp']['uid']
+a = pincells['31fuel']['uid']
+b = pincells['guidetube']['uid']
+c = pincells['instube']['uid']
+d = pincells['bp']['uid']
 
-  lattices[assemblyType]['6aBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['6bBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['6cBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['6dBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-0BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-0BP'].setLatticeCells([
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+                    [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+                    [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                    [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
 
-  configA = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
-            [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
-            [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
-  #rotate counterclockwise
-  configB = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,d,a,a,b,a,a,b,a,a,a,a,a],
-            [a,a,a,d,a,a,a,a,a,a,a,a,a,b,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,d,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,d,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,d,a,a,a,a,a,a,a,a,a,b,a,a,a],
-            [a,a,a,a,a,d,a,a,b,a,a,b,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
-  configC = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-            [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-            [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
-  configD = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,b,a,a,b,a,a,d,a,a,a,a,a],
-            [a,a,a,b,a,a,a,a,a,a,a,a,a,d,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,b,a,a,a,a,a,a,a,a,a,d,a,a,a],
-            [a,a,a,a,a,b,a,a,b,a,a,d,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+################################################################################
+#############################  *6 Burnable Poisons ##############################
+################################################################################
+a = pincells['31fuel']['uid']
+b = pincells['guidetube']['uid']
+c = pincells['instube']['uid']
+d = pincells['bp']['uid']
 
-  lattices[assemblyType]['6aBP'].setLatticeCells(configA)
-  lattices[assemblyType]['6bBP'].setLatticeCells(configB)
-  lattices[assemblyType]['6cBP'].setLatticeCells(configC)
-  lattices[assemblyType]['6dBP'].setLatticeCells(configD)
+lattices['3.1-6tBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-6lBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-6rBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-6bBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+
+configT = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
+          [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+          [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+#rotate counterclockwise
+configL = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,d,a,a,b,a,a,b,a,a,a,a,a],
+          [a,a,a,d,a,a,a,a,a,a,a,a,a,b,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,d,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,d,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,d,a,a,a,a,a,a,a,a,a,b,a,a,a],
+          [a,a,a,a,a,d,a,a,b,a,a,b,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+configR = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+          [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,b,a,a,b,a,a,b,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+          [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+configB = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,b,a,a,b,a,a,d,a,a,a,a,a],
+          [a,a,a,b,a,a,a,a,a,a,a,a,a,d,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,b,a,a,a,a,a,a,a,a,a,d,a,a,a],
+          [a,a,a,a,a,b,a,a,b,a,a,d,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+
+lattices['3.1-6tBP'].setLatticeCells(configT)
+lattices['3.1-6lBP'].setLatticeCells(configL)
+lattices['3.1-6rBP'].setLatticeCells(configR)
+lattices['3.1-6bBP'].setLatticeCells(configB)
+
+################################################################################
+#############################  12 Burnable Poisons #############################
+################################################################################
+a = pincells['24fuel']['uid']
+b = pincells['guidetube']['uid']
+c = pincells['instube']['uid']
+d = pincells['bp']['uid']
+
+lattices['2.4-12BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+
+cycle1 = [
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
+       [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+       [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+
+lattices['2.4-12BP'].setLatticeCells(cycle1)
+
+a = pincells['31fuel']['uid']
+b = pincells['guidetube']['uid']
+c = pincells['instube']['uid']
+d = pincells['bp']['uid']
+
+lattices['3.1-12BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+
+cycle1 = [
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
+       [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+       [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+
+lattices['3.1-12BP'].setLatticeCells(cycle1)
 
 
+################################################################################
+#############################  *15 Burnable Poisons ##############################
+################################################################################
+a = pincells['31fuel']['uid']
+b = pincells['guidetube']['uid']
+c = pincells['instube']['uid']
+d = pincells['bp']['uid']
 
-  ################################################################################
-  #############################  8 Burnable Poisons ##############################
-  ################################################################################
-  a = pincells[assemblyType]['uid']
-  b = pincells['guidetube']['uid']
-  c = pincells['instube']['uid']
-  d = pincells['bp']['uid']
+lattices['3.1-15tBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-15lBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-15rBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-15bBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
 
-  lattices[assemblyType]['8BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['8BP'].setLatticeCells([
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-                      [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,b,a,a,b,a,a,d,a,a,b,a,a,b,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,b,a,a,d,a,a,c,a,a,d,a,a,b,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,b,a,a,b,a,a,d,a,a,b,a,a,b,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-                      [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                      [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
+configT = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
+          [a,a,a,d,a,a,a,a,a,a,a,a,a,b,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,d,a,a,d,a,a,d,a,a,d,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,d,a,a,d,a,a,c,a,a,d,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,d,a,a,d,a,a,d,a,a,d,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+          [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
 
-  ################################################################################
-  #############################  *12 Burnable Poisons ##############################
-  ################################################################################
-  a = pincells[assemblyType]['uid']
-  b = pincells['guidetube']['uid']
-  c = pincells['instube']['uid']
-  d = pincells['bp']['uid']
+configL = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+          [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,d,a,a,d,a,a,d,a,a,d,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,d,a,a,d,a,a,c,a,a,d,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,d,a,a,d,a,a,d,a,a,d,a,a,b,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,d,a,a,a,a,a,a,a,a,a,b,a,a,a],
+          [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+configR = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+          [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,d,a,a,d,a,a,d,a,a,d,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,d,a,a,c,a,a,d,a,a,d,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,d,a,a,d,a,a,d,a,a,d,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,b,a,a,a,a,a,a,a,a,a,d,a,a,a],
+          [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+configB = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
+          [a,a,a,b,a,a,a,a,a,a,a,a,a,d,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,d,a,a,d,a,a,d,a,a,d,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,d,a,a,c,a,a,d,a,a,d,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,b,a,a,d,a,a,d,a,a,d,a,a,d,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
+          [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+          [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
 
-  lattices[assemblyType]['12aBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['12bBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-15tBP'].setLatticeCells(configT)
+lattices['3.1-15lBP'].setLatticeCells(configL)
+lattices['3.1-15rBP'].setLatticeCells(configR)
+lattices['3.1-15bBP'].setLatticeCells(configB)
 
-  cycle2=[
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
-         [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,d,a,a,b,a,a,d,a,a,b,a,a,d,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,b,a,a,d,a,a,c,a,a,d,a,a,b,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,d,a,a,b,a,a,d,a,a,b,a,a,d,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
-         [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+################################################################################
+#############################  16 Burnable Poisons ##############################
+################################################################################
+a = pincells['24fuel']['uid']
+b = pincells['guidetube']['uid']
+c = pincells['instube']['uid']
+d = pincells['bp']['uid']
 
-  cycle1 = [
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
-         [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,b,a,a,b,a,a,c,a,a,b,a,a,b,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-         [a,a,a,a,a,d,a,a,b,a,a,d,a,a,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-         [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+lattices['2.4-16BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['2.4-16BP'].setLatticeCells([
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
+                     [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,d,a,a,b,a,a,c,a,a,b,a,a,d,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+                     [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
 
-  lattices[assemblyType]['12aBP'].setLatticeCells(cycle1)
-  lattices[assemblyType]['12bBP'].setLatticeCells(cycle2)
+a = pincells['31fuel']['uid']
+b = pincells['guidetube']['uid']
+c = pincells['instube']['uid']
+d = pincells['bp']['uid']
 
-  ################################################################################
-  #############################  *15 Burnable Poisons ##############################
-  ################################################################################
-  a = pincells[assemblyType]['uid']
-  b = pincells['guidetube']['uid']
-  c = pincells['instube']['uid']
-  d = pincells['bp']['uid']
+lattices['3.1-16BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-16BP'].setLatticeCells([
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
+                     [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,d,a,a,b,a,a,c,a,a,b,a,a,d,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+                     [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
 
-  lattices[assemblyType]['15aBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['15bBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['15cBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['15dBP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
 
-  configA = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
-            [a,a,a,d,a,a,a,a,a,a,a,a,a,b,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,d,a,a,d,a,a,d,a,a,d,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,d,a,a,d,a,a,c,a,a,d,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,d,a,a,d,a,a,d,a,a,d,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
-            [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
+################################################################################
+#############################  20 Burnable Poisons ##############################
+################################################################################
+a = pincells['31fuel']['uid']
+b = pincells['guidetube']['uid']
+c = pincells['instube']['uid']
+d = pincells['bp']['uid']
 
-  configB = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-            [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,d,a,a,d,a,a,d,a,a,d,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,d,a,a,d,a,a,c,a,a,d,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,d,a,a,d,a,a,d,a,a,d,a,a,b,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,d,a,a,a,a,a,a,a,a,a,b,a,a,a],
-            [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
-  configC = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-            [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,d,a,a,d,a,a,d,a,a,d,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,d,a,a,c,a,a,d,a,a,d,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,d,a,a,d,a,a,d,a,a,d,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,b,a,a,a,a,a,a,a,a,a,d,a,a,a],
-            [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
-  configC = [[a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
-            [a,a,a,b,a,a,a,a,a,a,a,a,a,d,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,d,a,a,d,a,a,d,a,a,d,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,d,a,a,c,a,a,d,a,a,d,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,b,a,a,d,a,a,d,a,a,d,a,a,d,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,b,a,a,a,a,a,a,a,a,a,b,a,a,a],
-            [a,a,a,a,a,b,a,a,b,a,a,b,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-            [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]]
-
-  lattices[assemblyType]['15aBP'].setLatticeCells(configA)
-  lattices[assemblyType]['15bBP'].setLatticeCells(configB)
-  lattices[assemblyType]['15cBP'].setLatticeCells(configC)
-  lattices[assemblyType]['15dBP'].setLatticeCells(configD)
-
-  ################################################################################
-  #############################  16 Burnable Poisons ##############################
-  ################################################################################
-  a = pincells[assemblyType]['uid']
-  b = pincells['guidetube']['uid']
-  c = pincells['instube']['uid']
-  d = pincells['bp']['uid']
-
-  lattices[assemblyType]['16BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['16BP'].setLatticeCells([
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
-                       [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,d,a,a,b,a,a,c,a,a,b,a,a,d,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,d,a,a,b,a,a,b,a,a,b,a,a,d,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-                       [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
-
-  ################################################################################
-  #############################  20 Burnable Poisons ##############################
-  ################################################################################
-  a = pincells[assemblyType]['uid']
-  b = pincells['guidetube']['uid']
-  c = pincells['instube']['uid']
-  d = pincells['bp']['uid']
-
-  lattices[assemblyType]['20BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
-  lattices[assemblyType]['20BP'].setLatticeCells([
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
-                       [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,d,a,a,d,a,a,b,a,a,d,a,a,d,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,d,a,a,b,a,a,c,a,a,b,a,a,d,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,d,a,a,d,a,a,b,a,a,d,a,a,d,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
-                       [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
-                       [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
+lattices['3.1-20BP'] = Lattice(id=universe_id(), width_x = pinPitch, width_y = pinPitch)
+lattices['3.1-20BP'].setLatticeCells([
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
+                     [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,d,a,a,d,a,a,b,a,a,d,a,a,d,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,d,a,a,b,a,a,c,a,a,b,a,a,d,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,d,a,a,d,a,a,b,a,a,d,a,a,d,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,d,a,a,a,a,a,a,a,a,a,d,a,a,a],
+                     [a,a,a,a,a,d,a,a,d,a,a,d,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a],
+                     [a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a,a]])
