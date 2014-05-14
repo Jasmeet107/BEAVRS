@@ -3,115 +3,43 @@ import numpy
 from casmo import *
 
 def averageXSGenerator(self):
-  val_dict = {'siga':{'fuel':[],'water':[],'cladding':[],'bp':[],'helium':[],'zircaloy':[],'ss304',[]},
-  'sigd':{'fuel':[],'water':[],'cladding':[],'bp':[],'helium':[],'zircaloy':[],'ss304',[]},
-  'sigt':{'fuel':[],'water':[],'cladding':[],'bp':[],'helium':[],'zircaloy':[],'ss304',[]},
-  'sigf':{'fuel':[],'water':[],'cladding':[],'bp':[],'helium':[],'zircaloy':[],'ss304',[]},
-  'signf':{'fuel':[],'water':[],'cladding':[],'bp':[],'helium':[],'zircaloy':[],'ss304',[]},
-  'sigs':{'fuel':[],'water':[],'cladding':[],'bp':[],'helium':[],'zircaloy':[],'ss304',[]}}
+  xs_types = ['siga','sigd','sigt','sigf','signf','sigs']
+  regions = ['fuel','water','cladding','helium','bp','zircaloy','ss304']
+  variable_dict = {'siga':self._siga,'sigd':self._sigd,'sigt':self._sigt,'sigf':self._sigf,'signf':self._signf,'sigs':self._sigs}
+  val_dict = {}
+  for xs_type in xs_types:
+    for region in regions:
+      val_dict[xs_type][region] = []
   
   for i in range(len(self._cell_type_array)):
     for j in range(len(self._cell_type_array[i])):
       if string_pin_cell_array[i][j]=='gt':
-        val_dict['siga']['water'].append(self._siga[self._min_microregions[i][j]])
-        val_dict['siga']['water'].append(self._siga[self._min_microregions[i][j]+2])
-        val_dict['sigd']['water'].append(self._sigd[self._min_microregions[i][j]])
-        val_dict['sigd']['water'].append(self._sigd[self._min_microregions[i][j]+2])
-        val_dict['sigt']['water'].append(self._sigt[self._min_microregions[i][j]])
-        val_dict['sigt']['water'].append(self._sigt[self._min_microregions[i][j]+2])
-        val_dict['sigf']['water'].append(self._sigf[self._min_microregions[i][j]])
-        val_dict['sigf']['water'].append(self._sigf[self._min_microregions[i][j]+2])
-        val_dict['signf']['water'].append(self._signf[self._min_microregions[i][j]])
-        val_dict['signf']['water'].append(self._signf[self._min_microregions[i][j]+2])
-        val_dict['sigs']['water'].append(self._sigs[self._min_microregions[i][j]])
-        val_dict['sigs']['water'].append(self._sigs[self._min_microregions[i][j]+2])
-        val_dict['siga']['cladding'].append(self._siga[self._min_microregions[i][j]+1])
-        val_dict['sigd']['cladding'].append(self._sigd[self._min_microregions[i][j]+1])
-        val_dict['sigt']['cladding'].append(self._sigt[self._min_microregions[i][j]+1])
-        val_dict['sigf']['cladding'].append(self._sigf[self._min_microregions[i][j]+1])
-        val_dict['signf']['cladding'].append(self._signf[self._min_microregions[i][j]+1])
-        val_dict['sigs']['cladding'].append(self._sigs[self._min_microregions[i][j]+1])
+        for xs_type in xs_types:
+          val_dict[xs_type]['water'].append(variable_dict[xs_type][self._min_microregions[i][j])
+          val_dict[xs_type]['cladding'].append(variable_dict[xs_type][self._min_microregions[i][j]+1)
+          for k in range(self._min_microregions[i][j]+2,self.max_microregions[i][j]+1):
+            val_dict[xs_type]['water'].append(variable_dict[xs_type][k])
       elif string_pin_cell_array[i][j]=='fuel':
-        val_dict['siga']['fuel'].append(self._siga[self._min_microregions[i][j]])
-        val_dict['sigd']['fuel'].append(self._sigd[self._min_microregions[i][j]])
-        val_dict['sigt']['fuel'].append(self._sigt[self._min_microregions[i][j]])
-        val_dict['sigf']['fuel'].append(self._sigf[self._min_microregions[i][j]])
-        val_dict['signf']['fuel'].append(self._signf[self._min_microregions[i][j]])
-        val_dict['sigs']['fuel'].append(self._sigs[self._min_microregions[i][j]])
-        val_dict['siga']['helium'].append(self._siga[self._min_microregions[i][j]+1])
-        val_dict['sigd']['helium'].append(self._sigd[self._min_microregions[i][j]+1])
-        val_dict['sigt']['helium'].append(self._sigt[self._min_microregions[i][j]+1])
-        val_dict['sigf']['helium'].append(self._sigf[self._min_microregions[i][j]+1])
-        val_dict['signf']['helium'].append(self._signf[self._min_microregions[i][j]+1])
-        val_dict['sigs']['helium'].append(self._sigs[self._min_microregions[i][j]+1])
-        val_dict['siga']['cladding'].append(self._siga[self._min_microregions[i][j]+2])
-        val_dict['sigd']['cladding'].append(self._sigd[self._min_microregions[i][j]+2])
-        val_dict['sigt']['cladding'].append(self._sigt[self._min_microregions[i][j]+2])
-        val_dict['sigf']['cladding'].append(self._sigf[self._min_microregions[i][j]+2])
-        val_dict['signf']['cladding'].append(self._signf[self._min_microregions[i][j]+2])
-        val_dict['sigs']['cladding'].append(self._sigs[self._min_microregions[i][j]+2])
-        val_dict['siga']['water'].append(self._siga[self._min_microregions[i][j]+3])
-        val_dict['sigd']['water'].append(self._sigd[self._min_microregions[i][j]+3])
-        val_dict['sigt']['water'].append(self._sigt[self._min_microregions[i][j]+3])
-        val_dict['sigf']['water'].append(self._sigf[self._min_microregions[i][j]+3])
-        val_dict['signf']['water'].append(self._signf[self._min_microregions[i][j]+3])
-        val_dict['sigs']['water'].append(self._sigs[self._min_microregions[i][j]+3])
+        for xs_type in xs_types:
+          val_dict[xs_type]['fuel'].append(variable_dict[xs_type][self._min_microregions[i][j])
+          val_dict[xs_type]['helium'].append(variable_dict[xs_type][self._min_microregions[i][j]+1)
+          val_dict[xs_type]['cladding'].append(variable_dict[xs_type][self._min_microregions[i][j]+2)
+          for k in range(self._min_microregions[i][j]+3,self.max_microregions[i][j]+1):
+            val_dict[xs_type]['water'].append(variable_dict[xs_type][k])
       elif string_pin_cell_array[i][j]=='bp':
-        val_dict['siga']['helium'].append(self._siga[self._min_microregions[i][j]])
-        val_dict['sigd']['helium'].append(self._sigd[self._min_microregions[i][j]])
-        val_dict['sigt']['helium'].append(self._sigt[self._min_microregions[i][j]])
-        val_dict['sigf']['helium'].append(self._sigf[self._min_microregions[i][j]])
-        val_dict['signf']['helium'].append(self._signf[self._min_microregions[i][j]])
-        val_dict['sigs']['helium'].append(self._sigs[self._min_microregions[i][j]])
-        val_dict['siga']['ss304'].append(self._siga[self._min_microregions[i][j]+1])
-        val_dict['sigd']['ss304'].append(self._sigd[self._min_microregions[i][j]+1])
-        val_dict['sigt']['ss304'].append(self._sigt[self._min_microregions[i][j]+1])
-        val_dict['sigf']['ss304'].append(self._sigf[self._min_microregions[i][j]+1])
-        val_dict['signf']['ss304'].append(self._signf[self._min_microregions[i][j]+1])
-        val_dict['sigs']['ss304'].append(self._sigs[self._min_microregions[i][j]+1])
-        val_dict['siga']['helium'].append(self._siga[self._min_microregions[i][j]+2])
-        val_dict['sigd']['helium'].append(self._sigd[self._min_microregions[i][j]+2])
-        val_dict['sigt']['helium'].append(self._sigt[self._min_microregions[i][j]+2])
-        val_dict['sigf']['helium'].append(self._sigf[self._min_microregions[i][j]+2])
-        val_dict['signf']['helium'].append(self._signf[self._min_microregions[i][j]+2])
-        val_dict['sigs']['helium'].append(self._sigs[self._min_microregions[i][j]+2])
-        val_dict['siga']['bp'].append(self._siga[self._min_microregions[i][j]+3])
-        val_dict['sigd']['bp'].append(self._sigd[self._min_microregions[i][j]+3])
-        val_dict['sigt']['bp'].append(self._sigt[self._min_microregions[i][j]+3])
-        val_dict['sigf']['bp'].append(self._sigf[self._min_microregions[i][j]+3])
-        val_dict['signf']['bp'].append(self._signf[self._min_microregions[i][j]+3])
-        val_dict['sigs']['bp'].append(self._sigs[self._min_microregions[i][j]+3])
-        val_dict['siga']['helium'].append(self._siga[self._min_microregions[i][j]+4])
-        val_dict['sigd']['helium'].append(self._sigd[self._min_microregions[i][j]+4])
-        val_dict['sigt']['helium'].append(self._sigt[self._min_microregions[i][j]+4])
-        val_dict['sigf']['helium'].append(self._sigf[self._min_microregions[i][j]+4])
-        val_dict['signf']['helium'].append(self._signf[self._min_microregions[i][j]+4])
-        val_dict['sigs']['helium'].append(self._sigs[self._min_microregions[i][j]+4])
-        val_dict['siga']['ss304'].append(self._siga[self._min_microregions[i][j]+5])
-        val_dict['sigd']['ss304'].append(self._sigd[self._min_microregions[i][j]+5])
-        val_dict['sigt']['ss304'].append(self._sigt[self._min_microregions[i][j]+5])
-        val_dict['sigf']['ss304'].append(self._sigf[self._min_microregions[i][j]+5])
-        val_dict['signf']['ss304'].append(self._signf[self._min_microregions[i][j]+5])
-        val_dict['sigs']['ss304'].append(self._sigs[self._min_microregions[i][j]+5])
-        val_dict['siga']['water'].append(self._siga[self._min_microregions[i][j]+6])
-        val_dict['sigd']['water'].append(self._sigd[self._min_microregions[i][j]+6])
-        val_dict['sigt']['water'].append(self._sigt[self._min_microregions[i][j]+6])
-        val_dict['sigf']['water'].append(self._sigf[self._min_microregions[i][j]+6])
-        val_dict['signf']['water'].append(self._signf[self._min_microregions[i][j]+6])
-        val_dict['sigs']['water'].append(self._sigs[self._min_microregions[i][j]+6])
-        val_dict['siga']['zircaloy'].append(self._siga[self._min_microregions[i][j]+7])
-        val_dict['sigd']['zircaloy'].append(self._sigd[self._min_microregions[i][j]+7])
-        val_dict['sigt']['zircaloy'].append(self._sigt[self._min_microregions[i][j]+7])
-        val_dict['sigf']['zircaloy'].append(self._sigf[self._min_microregions[i][j]+7])
-        val_dict['signf']['zircaloy'].append(self._signf[self._min_microregions[i][j]+7])
-        val_dict['sigs']['zircaloy'].append(self._sigs[self._min_microregions[i][j]+7])
-        val_dict['siga']['water'].append(self._siga[self._min_microregions[i][j]+8])
-        val_dict['sigd']['water'].append(self._sigd[self._min_microregions[i][j]+8])
-        val_dict['sigt']['water'].append(self._sigt[self._min_microregions[i][j]+8])
-        val_dict['sigf']['water'].append(self._sigf[self._min_microregions[i][j]+8])
-        val_dict['signf']['water'].append(self._signf[self._min_microregions[i][j]+8])
-        val_dict['sigs']['water'].append(self._sigs[self._min_microregions[i][j]+8])
+        for xs_type in xs_types:
+          val_dict[xs_type]['helium'].append(variable_dict[xs_type][self._min_microregions[i][j])
+          val_dict[xs_type]['ss304'].append(variable_dict[xs_type][self._min_microregions[i][j]+1)
+          val_dict[xs_type]['helium'].append(variable_dict[xs_type][self._min_microregions[i][j]+2)
+          val_dict[xs_type]['bp'].append(variable_dict[xs_type][self._min_microregions[i][j]+3)
+          val_dict[xs_type]['helium'].append(variable_dict[xs_type][self._min_microregions[i][j]+4)
+          val_dict[xs_type]['ss304'].append(variable_dict[xs_type][self._min_microregions[i][j]+5)
+          val_dict[xs_type]['water'].append(variable_dict[xs_type][self._min_microregions[i][j]+6)
+          val_dict[xs_type]['zircaloy'].append(variable_dict[xs_type][self._min_microregions[i][j]+7)
+          for k in range(self._min_microregions[i][j]+8,self.max_microregions[i][j]+1):
+            val_dict[xs_type]['water'].append(variable_dict[xs_type][k])
       
-                    
-#calculate averages
-absorption_avgs = {'water':sum(val_dict['siga']['water'])/len(val_dict['siga']['water']),'fuel':sum(val_dict['siga']['fuel'])/len(val_dict['siga']['fuel'])}
+  avg_dict = {}            
+  for xs_type in xs_types:
+    for region in regions:
+      avg_dict[xs_type][region] = sum(val_dict[xs_type][region])/len(val_dict[xs_type][region])
