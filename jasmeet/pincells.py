@@ -3,7 +3,9 @@ from surfaces import surfaces
 #import materials
 
 pincells = dict() #dictionary of pin cells
-
+pincells['water'] = {}
+pincells['water']['uid'] = universe_id() #sets universe ID for pin cell
+pincells['water'] = CellBasic(universe=pincells['water']['uid'], material=10000) #replace material later
 
 ################################################################################
 #############################  1.6% Enriched Fuel Pins #########################

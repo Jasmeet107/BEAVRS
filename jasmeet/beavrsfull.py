@@ -3,7 +3,7 @@ from lattices import lattices, pinPitch
 from openmoc import *
 
 
-water = CellBasic(universe=universe_id(), material=water)
+
 a160 = CellFill(universe=universe_id(), universe_fill= lattices['1.6-0BP'].getId()) 
 b240 = CellFill(universe=universe_id(), universe_fill= lattices['2.4-0BP'].getId())
 c310 = CellFill(universe=universe_id(), universe_fill= lattices['3.1-0BP'].getId())
@@ -21,7 +21,7 @@ n2416 = CellFill(universe=universe_id(), universe_fill= lattices['2.4-16BP'].get
 o3116 = CellFill(universe=universe_id(), universe_fill= lattices['3.1-16BP'].getId())
 p3120 = CellFill(universe=universe_id(), universe_fill= lattices['3.1-20BP'].getId())
 
-w = water.getId()
+w = pincells['water']['uid']
 a = a160.getId()
 b = b240.getId()
 c = c310.getId()
@@ -39,7 +39,8 @@ n = n2416.getId()
 o = o3116.getId()
 p = p3120.getId()
 
-fullcore = Lattice(id=universe_id(), width_x = pinPitch*17, width_y = pinPitch*17)
+
+fullcore = Lattice(id=universe_id(), width_x = pinPitch*17*17, width_y = pinPitch*17*17)
 fullcore.setLatticeCells([[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
                           [w, w, w, w, w, c, d, c, d, c, d, c, w, w, w, w, w],
                           [w, w, w, c, c, o, a, p, a, p, a, o, c, c, w, w, w],
