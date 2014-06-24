@@ -1,13 +1,8 @@
 from openmoc import *
-import openmoc.log as log #stores data printed during simulation
-import openmoc.plotter as plotter
-import openmoc.materialize as materialize
-import openmoc.process as process
-import h5py
-import numpy as np
+
 
 # Keys are Surface string names and values are OpenCSG Surfaces.
-surfaces = dict()
+surfaces = {}
 
 
 ################################################################################
@@ -33,6 +28,9 @@ surfaces['GT Radius-2'] = Circle(x=0.0, y=0.0, radius=0.60198)
 
 surfaces['IT Radius-1'] = Circle(x=0.0, y=0.0, radius=0.43688)
 surfaces['IT Radius-2'] = Circle(x=0.0, y=0.0, radius=0.48387)
+surfaces['IT Radius-3'] = Circle(x=0.0, y=0.0, radius=0.56134)
+surfaces['IT Radius-4'] = Circle(x=0.0, y=0.0, radius=0.60198)
+
 
 
 ################################################################################
