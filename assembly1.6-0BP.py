@@ -99,3 +99,7 @@ solver.convergeSource(1000)
 
 # Print a report of the time to solution
 solver.printTimerReport()
+
+#Plot fluxes
+plotter.plot_fluxes(geometry, solver)
+

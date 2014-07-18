@@ -1,11 +1,13 @@
 from pincells import pincells
-from surfaces import surfaces
 from lattices import lattices, pinPitch
 from materials import materials
 from openmoc import *
 import openmoc.log as log
+from surfaces import surfaces
+import openmoc.plotter as plotter
 
-log.set_log_level('DEBUG')
+
+#log.set_log_level('DEBUG')
 
 groups = input('How many energy groups?')
 if groups == '2' or groups == 2:
@@ -30,26 +32,26 @@ n2416 = CellFill(universe=universe_id(), universe_fill= lattices[group]['2.4-16B
 o3116 = CellFill(universe=universe_id(), universe_fill= lattices[group]['3.1-16BP'].getId())
 p3120 = CellFill(universe=universe_id(), universe_fill= lattices[group]['3.1-20BP'].getId())
 
-w = pincells[group]['water'].getId()
-a = a160.getId()
-b = b240.getId()
-c = c310.getId()
-d = d316t.getId()
-e = e316l.getId()
-f = f316r.getId()
-g = g316b.getId()
-h = h2412.getId()
-i = i3112.getId()
-j = j3115t.getId()
-k = k3115l.getId()
-l = l3115r.getId()
-m = m3115b.getId()
-n = n2416.getId()
-o = o3116.getId()
-p = p3120.getId()
+w = pincells[group]['water'].getUniverseId()
+a = a160.getUniverseId()
+b = b240.getUniverseId()
+c = c310.getUniverseId()
+d = d316t.getUniverseId()
+e = e316l.getUniverseId()
+f = f316r.getUniverseId()
+g = g316b.getUniverseId()
+h = h2412.getUniverseId()
+i = i3112.getUniverseId()
+j = j3115t.getUniverseId()
+k = k3115l.getUniverseId()
+l = l3115r.getUniverseId()
+m = m3115b.getUniverseId()
+n = n2416.getUniverseId()
+o = o3116.getUniverseId()
+p = p3120.getUniverseId()
 
 
-fullcore = Lattice(id=universe_id(), width_x = pinPitch*17*17, width_y = pinPitch*17*17)
+fullcore = Lattice(id=universe_id(), width_x = pinPitch*17, width_y = pinPitch*17)
 fullcore.setLatticeCells([[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
                           [w, w, w, w, w, c, d, c, d, c, d, c, w, w, w, w, w],
                           [w, w, w, c, c, o, a, p, a, p, a, o, c, c, w, w, w],
@@ -96,6 +98,11 @@ bps = ['pwru240w12', 'pwru240w16', 'pwru310w06', 'pwru310w12', 'pwru310w15', 'pw
 for surface in surfaces:
 	geometry.addSurface(surfaces[surface])
 
+geometry.addSurface(left)
+geometry.addSurface(right)
+geometry.addSurface(bottom)
+geometry.addSurface(top)
+
 for name in names:
   if name in bps:
     materialtypes = ['fuel', 'cladding', 'helium', 'water', 'ss304', 'bp']
@@ -123,7 +130,6 @@ for name in names:
   geometry.addCell(pincells[group][name]['instube']['water2'])
   
   
-  print 'finished 1st lattice cells'
   if name in bps:
     #bp
     geometry.addCell(pincells[group][name]['bp']['helium'])
@@ -139,9 +145,7 @@ for name in names:
 
 geometry.addCell(a160)
 geometry.addCell(b240)
-print '***************************************************************'
 geometry.addCell(c310)
-print '***************************************************************'
 geometry.addCell(d316t)
 geometry.addCell(e316l)
 geometry.addCell(f316r)
@@ -161,9 +165,8 @@ geometry.addCell(fullcorecell)
 
 
 #add all lattices
-print 'starting to add lattices'
+
 geometry.addLattice(lattices[group]['1.6-0BP'])
-print 'finished first lattice'
 geometry.addLattice(lattices[group]['2.4-0BP'])
 geometry.addLattice(lattices[group]['3.1-0BP'])
 geometry.addLattice(lattices[group]['3.1-6tBP'])
@@ -179,8 +182,33 @@ geometry.addLattice(lattices[group]['3.1-15bBP'])
 geometry.addLattice(lattices[group]['2.4-16BP'])
 geometry.addLattice(lattices[group]['3.1-16BP'])
 geometry.addLattice(lattices[group]['3.1-20BP'])
-print 'added lattices'
 geometry.addLattice(fullcore)
 
 #initialize flat source regions
 geometry.initializeFlatSourceRegions()
+
+#plot geometry by materials, cells, and FSRs
+plotter.plot_cells(geometry)
+plotter.plot_materials(geometry)
+plotter.plot_flat_source_regions(geometry)
+
+# Initialize the track generator after the geometry has been
+# constructed. Use 64 azimuthal angles and 0.05 cm track spacing.
+track_generator = openmoc.TrackGenerator(geometry, num_azim=64, \
+                                         spacing=0.05)
+
+# Generate tracks using ray tracing across the geometry
+track_generator.generateTracks()
+
+# Initialize a solver for the simulation and set the number of
+# threads and source convergence threshold
+solver = openmoc.ThreadPrivateSolver(geometry, track_generator)
+solver.setNumThreads(4)
+solver.setSourceConvergenceThreshold(1E-5)
+
+# Converge the source with up to a maximum of 1000 source iterations
+solver.convergeSource(1000)
+
+# Print a report of the time to solution
+solver.printTimerReport()
+

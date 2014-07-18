@@ -55,4 +55,11 @@ docs/_build/
 # Temporary files
 *~
 */*~
+*.data
+*/*.data
+*/tracks/*
+*.png
+*/*.png
+*.DS_Store
+*/*.DS_Store
 
