@@ -3,6 +3,17 @@ from beavrs2d.lattices import pinPitch
 from openmoc import *
 import openmoc.log as log
 import openmoc.plotter as plotter
+from openmoc.options import Options
+
+
+###############################################################################
+#######################   Main Simulation Parameters   ########################
+###############################################################################
+
+options = Options()
+relax_factor = options.getCmfdRelaxationFactor()
+acceleration = options.getCmfdAcceleration()
+mesh_level = options.getCmfdMeshLevel()
 
 #log.set_log_level('DEBUG')
 
@@ -90,7 +101,22 @@ fullcorecell.addSurface(halfspace=-1, surface=right)
 fullcorecell.addSurface(halfspace=+1, surface=bottom)
 fullcorecell.addSurface(halfspace=-1, surface=top)
 
-geometry = Geometry() #initialize geometry
+
+###############################################################################
+##########################     Creating Cmfd mesh    ##########################
+###############################################################################
+
+log.py_printf('NORMAL', 'Creating Cmfd mesh...')
+
+mesh = Mesh(MOC, acceleration, relax_factor, mesh_level)
+
+###############################################################################
+##########################   Creating the Geometry   ##########################
+###############################################################################
+
+log.py_printf('NORMAL', 'Creating geometry...')
+
+geometry = Geometry(mesh)
 
 names = ['pwru160c00','pwru240c00','pwru240w12', 'pwru240w16', 'pwru310c00', 'pwru310w06', 'pwru310w12', 'pwru310w15', 'pwru310w16', 'pwru310w20']
 bps = ['pwru240w12', 'pwru240w16', 'pwru310w06', 'pwru310w12', 'pwru310w15', 'pwru310w16', 'pwru310w20']
@@ -187,6 +213,18 @@ geometry.addLattice(fullcore)
 #initialize flat source regions
 geometry.initializeFlatSourceRegions()
 
+
+###############################################################################
+########################   Creating the Cmfd module   #########################
+###############################################################################
+
+log.py_printf('NORMAL', 'Creating cmfd module...')
+
+cmfd = Cmfd(geometry)
+cmfd.setOmega(1.50)
+
+#################### Plotting ###########################
+
 #plot geometry by materials, cells, and FSRs
 plotter.plot_cells(geometry)
 plotter.plot_materials(geometry)
@@ -194,7 +232,7 @@ plotter.plot_flat_source_regions(geometry)
 
 # Initialize the track generator after the geometry has been
 # constructed. Use 64 azimuthal angles and 0.05 cm track spacing.
-track_generator = openmoc.TrackGenerator(geometry, num_azim=64, \
+track_generator = openmoc.TrackGenerator(geometry, num_azim=4, \
                                          spacing=0.05)
 
 # Generate tracks using ray tracing across the geometry
