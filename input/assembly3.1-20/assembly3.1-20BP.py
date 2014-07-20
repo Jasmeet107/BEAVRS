@@ -1,7 +1,3 @@
-from pincells import pincells
-from lattices import lattices, pinPitch
-from materials import materials
-from openmoc import *
 from beavrs2d import *
 from beavrs2d.lattices import pinPitch
 from openmoc import *
@@ -18,7 +14,6 @@ import openmoc.plotter as plotter
   
 group = '2'
 group = '8' #default
-
 assembly = CellFill(universe=0, universe_fill= lattices[group]['3.1-20BP'].getId()) #create cell, fill with lattice
 
 
