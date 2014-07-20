@@ -55,11 +55,21 @@ docs/_build/
 # Temporary files
 *~
 */*~
+
+#Data files
 *.data
 */*.data
 */tracks/*
+
+#Pictures
 *.png
 */*.png
+
+#Mac Shit
 *.DS_Store
 */*.DS_Store
+
+#HDF5 Files
+*.hdf5
+*/*.hdf5
 
