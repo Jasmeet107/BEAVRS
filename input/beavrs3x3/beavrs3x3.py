@@ -145,4 +145,6 @@ solver.printTimerReport()
 plotter.plot_cells(geometry)
 plotter.plot_materials(geometry)
 plotter.plot_flat_source_regions(geometry)
-plotter.plot_fluxes(geometry, solver)
+
+#Plot fluxes
+plotter.plot_fluxes(geometry, solver, energy_groups=[1, 2, 3, 4, 5, 6, 7, 8])

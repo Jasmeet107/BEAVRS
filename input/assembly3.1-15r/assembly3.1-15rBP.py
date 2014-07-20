@@ -110,4 +110,4 @@ solver.convergeSource(1000)
 solver.printTimerReport()
 
 #Plot fluxes
-plotter.plot_fluxes(geometry, solver)
+plotter.plot_fluxes(geometry, solver, energy_groups=[1, 2, 3, 4, 5, 6, 7, 8])
