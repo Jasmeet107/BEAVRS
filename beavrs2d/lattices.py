@@ -5,7 +5,6 @@ lattices = dict() #creates dictionary of lattices
 pinPitch = 1.25984
 groups = ['2', '8']
 for group in groups:
-  print group
   lattices[group] = {}
 
 ################################################################################

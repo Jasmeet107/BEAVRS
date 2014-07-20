@@ -8,7 +8,7 @@ assembly_names = ['pwru160c00','pwru240c00','pwru240w12', 'pwru240w16', 'pwru310
 
 group_types =['2-group/','8-group/']
 
-print 'GOING TO GENERATE'
+
 generate(assembly_names, group_types)
 
 

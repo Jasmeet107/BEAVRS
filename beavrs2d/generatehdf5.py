@@ -6,7 +6,6 @@ cwd = os.path.dirname(os.path.abspath(__file__))
 
 
 def generate (assembly_names, group_types): 
-	print "GENERATING"
 	for name in assembly_names:
 			for group in group_types:
 					assembly = Casmo()
@@ -25,7 +24,6 @@ def generate (assembly_names, group_types):
 									if assembly.getEnergyGroups() == 8:
 											chi[region,:] = numpy.array([7.560E-01, 2.438E-01, 1.808E-04, 0.000E+00, 0.000E+00, 0.000E+00,
 	0.000E+00, 0.000E+00])
-					print chi
 					assembly.setXS('CHI', chi)
 					assembly.setStringCellTypeArray(assembly.stringCellTypeArray())
 					assembly.exportAllXSToHDF5(name,directory = 'casmo-data/'+group)
