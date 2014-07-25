@@ -3,9 +3,33 @@ from pincells import pincells
 
 lattices = dict() #creates dictionary of lattices
 pinPitch = 1.25984
+waterPitch = 1.25984
 groups = ['2', '8']
 for group in groups:
   lattices[group] = {}
+  
+  #Water Lattice
+  w = pincells[group]['water'].getUniverseId()
+  lattices[group]['water'] = Lattice(id=universe_id(), width_x = waterPitch, width_y = waterPitch)
+  lattices[group]['water'].setLatticeCells([
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+  												[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w]])
+
 
 ################################################################################
 #############################  0 Burnable Poisons ##############################

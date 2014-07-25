@@ -26,6 +26,7 @@ mesh_level = options.getCmfdMeshLevel()
 group = '2'
 group = '8' #default
 
+water = CellFill(universe=universe_id(), universe_fill=lattices[group]['water'].getId())
 a160 = CellFill(universe=universe_id(), universe_fill= lattices[group]['1.6-0BP'].getId())
 b240 = CellFill(universe=universe_id(), universe_fill= lattices[group]['2.4-0BP'].getId())
 c310 = CellFill(universe= universe_id(), universe_fill=lattices[group]['3.1-0BP'].getId())
@@ -43,7 +44,7 @@ n2416 = CellFill(universe=universe_id(), universe_fill= lattices[group]['2.4-16B
 o3116 = CellFill(universe=universe_id(), universe_fill= lattices[group]['3.1-16BP'].getId())
 p3120 = CellFill(universe=universe_id(), universe_fill= lattices[group]['3.1-20BP'].getId())
 
-w = pincells[group]['water'].getUniverseId()
+w = water.getUniverseId()
 a = a160.getUniverseId()
 b = b240.getUniverseId()
 c = c310.getUniverseId()
@@ -168,7 +169,7 @@ for name in names:
     geometry.addCell(pincells[group][name]['bp']['cladding'])
     geometry.addCell(pincells[group][name]['bp']['water1'])
     
-
+geometry.addCell(water)
 geometry.addCell(a160)
 geometry.addCell(b240)
 geometry.addCell(c310)
@@ -192,6 +193,7 @@ geometry.addCell(fullcorecell)
 
 #add all lattices
 
+geometry.addLattice(lattices[group]['water'])
 geometry.addLattice(lattices[group]['1.6-0BP'])
 geometry.addLattice(lattices[group]['2.4-0BP'])
 geometry.addLattice(lattices[group]['3.1-0BP'])

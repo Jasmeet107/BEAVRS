@@ -10,6 +10,7 @@ groups = ['2', '8']
 
 for group in groups:
 	pincells[group] = {}
+	
 	##Creates Generic Water Cell
 	pincells[group]['water'] = {}
 	pincells[group]['water']['uid'] = universe_id() #sets universe ID for pin cell
