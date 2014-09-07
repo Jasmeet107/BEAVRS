@@ -1,30 +1,61 @@
 from beavrs2d import *
-from beavrs2d.lattices import pinPitch
+from beavrs2d.lattices import pin_pitch
 from openmoc import *
 import openmoc.log as log
 import openmoc.plotter as plotter
 from openmoc.options import Options
-
 
 ###############################################################################
 #######################   Main Simulation Parameters   ########################
 ###############################################################################
 
 options = Options()
-relax_factor = options.getCmfdRelaxationFactor()
-acceleration = options.getCmfdAcceleration()
-mesh_level = options.getCmfdMeshLevel()
 
-#log.set_log_level('DEBUG')
+num_threads = options.getNumThreads()
+track_spacing = options.getTrackSpacing()
+num_azim = options.getNumAzimAngles()
+tolerance = options.getTolerance()
+max_iters = options.getMaxIterations()
+group = '8'
 
-# groups = input('How many energy groups?')
-# if groups == '2' or groups == 2:
-#   group = '2'
-# elif groups == '8' or groups == 8:
-#   group = '8'
-  
-group = '2'
-group = '8' #default
+log.set_log_level('NORMAL')
+
+log.py_printf('TITLE', 'Simulating the BEAVRS full core benchmark...')
+
+###############################################################################
+###########################   Creating Surfaces   #############################
+###############################################################################
+
+log.py_printf('NORMAL', 'Creating surfaces...')
+
+left = openmoc.XPlane(x=-267.716)
+right = openmoc.XPlane(x=267.716)
+bottom = openmoc.YPlane(y=-267.716)
+top = openmoc.YPlane(y=267.716)
+
+left.setBoundaryType(VACUUM)
+right.setBoundaryType(VACUUM)
+bottom.setBoundaryType(VACUUM)
+top.setBoundaryType(VACUUM)
+
+core_cylinders = []
+core_cylinders.append(Circle(x=0., y=0., radius=187.960))
+core_cylinders.append(Circle(x=0., y=0., radius=193.675))
+core_cylinders.append(Circle(x=0., y=0., radius=199.39))
+core_cylinders.append(Circle(x=0., y=0., radius=230.0))
+core_cylinders.append(Circle(x=0., y=0., radius=251.9))
+
+neutron_shield_planes = []
+neutron_shield_planes.append(Plane(A=-0.577350, B=1.0, C=0.))
+neutron_shield_planes.append(Plane(A=-1.732051, B=1.0, C=0.))
+neutron_shield_planes.append(Plane(A=1.732051, B=1.0, C=0.))
+neutron_shield_planes.append(Plane(A=0.577350, B=1.0, C=0.))
+
+###############################################################################
+#############################   Creating Cells   ##############################
+###############################################################################
+
+log.py_printf('NORMAL', 'Creating cells...')
 
 water = CellFill(universe=universe_id(), universe_fill=lattices[group]['water'].getId())
 a160 = CellFill(universe=universe_id(), universe_fill= lattices[group]['1.6-0BP'].getId())
@@ -44,6 +75,120 @@ n2416 = CellFill(universe=universe_id(), universe_fill= lattices[group]['2.4-16B
 o3116 = CellFill(universe=universe_id(), universe_fill= lattices[group]['3.1-16BP'].getId())
 p3120 = CellFill(universe=universe_id(), universe_fill= lattices[group]['3.1-20BP'].getId())
 
+core_cells = []
+
+# assembly lattice
+core_cells.append(CellFill(universe = 0, universe_fill = 10))
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[0])
+
+# core barrel
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru240w12']['ss304'].getId(), rings=3, sectors=16))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[0])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[1])
+
+# neutron shield northeast
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru240w12']['ss304'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[1])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[2])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[0])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[1])
+
+# neutron shield northwest
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru240w12']['ss304'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[1])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[2])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[2])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[3])
+
+# neutron shield southwest
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru240w12']['ss304'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[1])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[2])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[0])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[1])
+
+# neutron shield southest
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru240w12']['ss304'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[1])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[2])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[2])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[3])
+
+# water jacket east
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru160c00']['water'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[1])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[3])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[0])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[3])
+
+# water jacket northeast
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru160c00']['water'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[2])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[3])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[0])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[1])
+
+# water jacket north
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru160c00']['water'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[1])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[3])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[1])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[2])
+
+# water jacket northwest
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru160c00']['water'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[2])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[3])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[2])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[3])
+
+# water jacket west
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru160c00']['water'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[1])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[3])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[0])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[3])
+
+# water jacket southwest
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru160c00']['water'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[2])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[3])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[0])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[1])
+
+# water jacket south
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru160c00']['water'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[1])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[3])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[1])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[2])
+
+# water jacket southeast
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru160c00']['water'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[2])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[3])
+core_cells[-1].addSurface(halfspace=-1, surface=neutron_shield_planes[2])
+core_cells[-1].addSurface(halfspace=+1, surface=neutron_shield_planes[3])
+
+# pressure vessel
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru240w12']['ss304'].getId(), rings=3, sectors=16))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[3])
+core_cells[-1].addSurface(halfspace=-1, surface=core_cylinders[4])
+
+# vacuum outside pressure vessel
+core_cells.append(CellBasic(universe = 0, material=materials[group]['pwru240w12']['helium'].getId()))
+core_cells[-1].addSurface(halfspace=+1, surface=core_cylinders[4])
+core_cells[-1].addSurface(halfspace=+1, surface=left)
+core_cells[-1].addSurface(halfspace=-1, surface=right)
+core_cells[-1].addSurface(halfspace=+1, surface=bottom)
+core_cells[-1].addSurface(halfspace=-1, surface=top)
+
+###############################################################################
+###########################   Creating Lattices   #############################
+###############################################################################
+
+log.py_printf('NORMAL', 'Creating lattices...')
+
 w = water.getUniverseId()
 a = a160.getUniverseId()
 b = b240.getUniverseId()
@@ -62,45 +207,32 @@ n = n2416.getUniverseId()
 o = o3116.getUniverseId()
 p = p3120.getUniverseId()
 
-
-fullcore = Lattice(id=universe_id(), width_x = pinPitch*17, width_y = pinPitch*17)
-fullcore.setLatticeCells([[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
-                          [w, w, w, w, w, c, d, c, d, c, d, c, w, w, w, w, w],
-                          [w, w, w, c, c, o, a, p, a, p, a, o, c, c, w, w, w],
-                          [w, w, c, j, n, a, n, a, n, a, n, a, n, m, c, w, w],
-                          [w, w, c, n, b, n, a, h, a, h, a, n, b, n, c, w, w],
-                          [w, c, o, a, n, a, h, a, h, a, h, a, n, a, o, c, w],
-                          [w, e, a, n, a, h, a, h, a, h, a, h, a, n, a, f, w],
-                          [w, c, p, a, h, a, h, a, n, a, h, a, h, a, p, c, w],
-                          [w, e, a, n, a, h, a, n, a, n, a, h, a, n, a, f, w],
-                          [w, c, p, a, h, a, h, a, n, a, h, a, h, a, p, c, w],
-                          [w, e, a, n, a, h, a, h, a, h, a, h, a, n, a, f, w],
-                          [w, c, o, a, n, a, h, a, a, a, h, a, n, a, o, c, w],
-                          [w, w, c, n, b, n, a, h, a, h, a, n, b, n, c, w, w],
-                          [w, w, c, k, n, a, n, a, n, a, n, a, n, l, c, w, w],
-                          [w, w, w, c, c, o, a, p, a, p, a, o, c, c, w, w, w],
-                          [w, w, w, w, w, c, g, c, g, c, g, c, w, w, w, w, w],
-                          [w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w]])
-
-fullcorecell = CellFill(universe = 0, universe_fill = fullcore.getId())
-
-#create surfaces
-left = openmoc.XPlane(x=-pinPitch*17*17/2.0)
-right = openmoc.XPlane(x=pinPitch*17*17/2.0)
-bottom = openmoc.YPlane(y=-pinPitch*17*17/2.0)
-top = openmoc.YPlane(y=pinPitch*17*17/2.0)
-
-#sets boundary condition to be reflective
-left.setBoundaryType(REFLECTIVE)
-right.setBoundaryType(REFLECTIVE)
-bottom.setBoundaryType(REFLECTIVE)
-top.setBoundaryType(REFLECTIVE)
-
-#add surfaces to bound cell
-fullcorecell.addSurface(halfspace=+1, surface=left)
-fullcorecell.addSurface(halfspace=-1, surface=right)
-fullcorecell.addSurface(halfspace=+1, surface=bottom)
-fullcorecell.addSurface(halfspace=-1, surface=top)
+fullcore = Lattice(10, pin_pitch*17, pin_pitch*17)
+fullcore.setLatticeCells([[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, c, d, c, d, c, d, c, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, c, c, o, a, p, a, p, a, o, c, c, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, c, j, n, a, n, a, n, a, n, a, n, m, c, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, c, n, b, n, a, h, a, h, a, n, b, n, c, w, w, w, w, w, w],
+                          [w, w, w, w, w, c, o, a, n, a, h, a, h, a, h, a, n, a, o, c, w, w, w, w, w],
+                          [w, w, w, w, w, e, a, n, a, h, a, h, a, h, a, h, a, n, a, f, w, w, w, w, w],
+                          [w, w, w, w, w, c, p, a, h, a, h, a, n, a, h, a, h, a, p, c, w, w, w, w, w],
+                          [w, w, w, w, w, e, a, n, a, h, a, n, a, n, a, h, a, n, a, f, w, w, w, w, w],
+                          [w, w, w, w, w, c, p, a, h, a, h, a, n, a, h, a, h, a, p, c, w, w, w, w, w],
+                          [w, w, w, w, w, e, a, n, a, h, a, h, a, h, a, h, a, n, a, f, w, w, w, w, w],
+                          [w, w, w, w, w, c, o, a, n, a, h, a, a, a, h, a, n, a, o, c, w, w, w, w, w],
+                          [w, w, w, w, w, w, c, n, b, n, a, h, a, h, a, n, b, n, c, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, c, k, n, a, n, a, n, a, n, a, n, l, c, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, c, c, o, a, p, a, p, a, o, c, c, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, c, g, c, g, c, g, c, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w],
+                          [w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w]])
 
 
 ###############################################################################
@@ -109,7 +241,8 @@ fullcorecell.addSurface(halfspace=-1, surface=top)
 
 log.py_printf('NORMAL', 'Creating Cmfd mesh...')
 
-mesh = Mesh(MOC, acceleration, relax_factor, mesh_level)
+cmfd = Cmfd()
+cmfd.setLatticeStructure(25,25)
 
 ###############################################################################
 ##########################   Creating the Geometry   ##########################
@@ -117,19 +250,27 @@ mesh = Mesh(MOC, acceleration, relax_factor, mesh_level)
 
 log.py_printf('NORMAL', 'Creating geometry...')
 
-geometry = Geometry(mesh)
+geometry = Geometry(cmfd)
 
 names = ['pwru160c00','pwru240c00','pwru240w12', 'pwru240w16', 'pwru310c00', 'pwru310w06', 'pwru310w12', 'pwru310w15', 'pwru310w16', 'pwru310w20']
 bps = ['pwru240w12', 'pwru240w16', 'pwru310w06', 'pwru310w12', 'pwru310w15', 'pwru310w16', 'pwru310w20']
 
+# add surfaces
 for surface in surfaces:
-	geometry.addSurface(surfaces[surface])
+  geometry.addSurface(surfaces[surface])
+
+for surface in core_cylinders:
+  geometry.addSurface(surface)
+
+for surface in neutron_shield_planes:
+  geometry.addSurface(surface)
 
 geometry.addSurface(left)
 geometry.addSurface(right)
 geometry.addSurface(bottom)
 geometry.addSurface(top)
 
+# add materials
 for name in names:
   if name in bps:
     materialtypes = ['fuel', 'cladding', 'helium', 'water', 'ss304', 'bp']
@@ -139,26 +280,28 @@ for name in names:
     #add materials
     geometry.addMaterial(materials[group][name][material])
 
+# add cells
 for name in names:
-  #add ALL cells
+
   geometry.addCell(pincells[group][name]['fuel'])
   geometry.addCell(pincells[group][name]['cladding'])
   geometry.addCell(pincells[group][name]['water'])
   geometry.addCell(pincells[group][name]['helium'])
+
   #guidetube
   geometry.addCell(pincells[group][name]['guidetube']['water1'])
   geometry.addCell(pincells[group][name]['guidetube']['water2'])
   geometry.addCell(pincells[group][name]['guidetube']['cladding'])
-  #instrumenttube
+
+  #instrument tube
   geometry.addCell(pincells[group][name]['instube']['helium'])
   geometry.addCell(pincells[group][name]['instube']['cladding1'])
   geometry.addCell(pincells[group][name]['instube']['cladding2'])
   geometry.addCell(pincells[group][name]['instube']['water1'])
   geometry.addCell(pincells[group][name]['instube']['water2'])
   
-  
+  # burnable poisons
   if name in bps:
-    #bp
     geometry.addCell(pincells[group][name]['bp']['helium'])
     geometry.addCell(pincells[group][name]['bp']['ss'])
     geometry.addCell(pincells[group][name]['bp']['helium1'])
@@ -187,12 +330,11 @@ geometry.addCell(n2416)
 geometry.addCell(o3116)
 geometry.addCell(p3120)
 geometry.addCell(pincells[group]['water'])
-geometry.addCell(fullcorecell)
 
+for cell in core_cells:
+  geometry.addCell(cell)
 
-
-#add all lattices
-
+# add all lattices
 geometry.addLattice(lattices[group]['water'])
 geometry.addLattice(lattices[group]['1.6-0BP'])
 geometry.addLattice(lattices[group]['2.4-0BP'])
@@ -212,45 +354,39 @@ geometry.addLattice(lattices[group]['3.1-16BP'])
 geometry.addLattice(lattices[group]['3.1-20BP'])
 geometry.addLattice(fullcore)
 
-#initialize flat source regions
+# initialize flat source regions
 geometry.initializeFlatSourceRegions()
 
+# plot geometry materials and cells
+plotter.plot_cells(geometry, gridsize=1000)
+plotter.plot_materials(geometry, gridsize=1000)
 
 ###############################################################################
-########################   Creating the Cmfd module   #########################
+########################   Creating the TrackGenerator   ######################
 ###############################################################################
 
-log.py_printf('NORMAL', 'Creating cmfd module...')
+log.py_printf('NORMAL', 'Initializing the track generator...')
 
-cmfd = Cmfd(geometry)
-cmfd.setOmega(1.50)
-
-#################### Plotting ###########################
-
-#plot geometry by materials, cells, and FSRs
-plotter.plot_cells(geometry)
-plotter.plot_materials(geometry)
-plotter.plot_flat_source_regions(geometry)
-
-# Initialize the track generator after the geometry has been
-# constructed. Use 64 azimuthal angles and 0.05 cm track spacing.
-track_generator = openmoc.TrackGenerator(geometry, num_azim=4, \
-                                         spacing=0.05)
-
-# Generate tracks using ray tracing across the geometry
+track_generator = ModularTrackGenerator(geometry, num_azim, track_spacing)
+track_generator.setLatticeStructure(1,1)
 track_generator.generateTracks()
 
-# Initialize a solver for the simulation and set the number of
-# threads and source convergence threshold
-solver = openmoc.ThreadPrivateSolver(geometry, track_generator)
-solver.setNumThreads(4)
-solver.setSourceConvergenceThreshold(1E-5)
+plotter.plot_flat_source_regions(geometry, gridsize=1000)
 
-# Converge the source with up to a maximum of 1000 source iterations
-solver.convergeSource(1000)
+###############################################################################
+###########################   Running a Simulation   ##########################
+###############################################################################
 
-# Print a report of the time to solution
+solver = ModularCPUSolver(geometry, track_generator)
+solver.setSourceConvergenceThreshold(tolerance)
+solver.setNumThreads(num_threads)
+solver.convergeSource(max_iters)
 solver.printTimerReport()
 
-#Plot fluxes
-plotter.plot_fluxes(geometry, solver, energy_groups=[1, 2, 3, 4, 5, 6, 7, 8])
+###############################################################################
+############################   Generating Plots   #############################
+###############################################################################
+
+log.py_printf('NORMAL', 'Plotting data...')
+
+plotter.plot_fluxes(geometry, solver, energy_groups=[1,2,3,4,5,6,7,8], gridsize=1000)
