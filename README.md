@@ -18,7 +18,8 @@ Installation
 To download and install this repository, issue the following commands
 into your terminal:
 
+<pre><code>
 >>> git clone git@github.com:Jasmeet107/BEAVRS.git
 >>> cd BEAVRS
 >>> python setup.py install --user
-
+</code></pre>
