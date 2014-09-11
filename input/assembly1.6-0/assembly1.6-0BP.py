@@ -61,7 +61,8 @@ cmfd.setLatticeStructure(17,17)
 ##########################   Creating the Geometry   ##########################
 ###############################################################################
 
-geometry = Geometry(cmfd)
+geometry = Geometry()
+geometry.setCmfd(cmfd)
 
 # add materials
 materialtypes = ['fuel', 'cladding', 'helium', 'water']
