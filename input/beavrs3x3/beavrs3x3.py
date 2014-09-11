@@ -51,7 +51,6 @@ right = openmoc.XPlane(x=pin_pitch*17*3/2.0)
 bottom = openmoc.YPlane(y=-pin_pitch*17*3/2.0)
 top = openmoc.YPlane(y=pin_pitch*17*3/2.0)
 
-
 #sets boundary condition to be reflective
 left.setBoundaryType(REFLECTIVE)
 right.setBoundaryType(REFLECTIVE)
