@@ -5,7 +5,7 @@
 #######################################
 
 #PBS -l nodes=1:ppn=12
-#PBS -l walltime=12:00:00
+#PBS -l walltime=24:00:00
 
 ######################################
 # Enter directory and set PATH
@@ -19,4 +19,4 @@ PATH=$PBS_O_PATH
 ######################################
  
 #PBS -k eo
-python beavrsfull.py -t 12
+python beavrsfull.py -t 12 -i 100000 -a 32 -s 0.05

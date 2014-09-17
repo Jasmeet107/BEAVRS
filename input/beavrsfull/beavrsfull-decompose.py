@@ -242,7 +242,7 @@ fullcore.setLatticeCells([[w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w, w,
 log.py_printf('NORMAL', 'Creating Cmfd mesh...')
 
 cmfd = Cmfd()
-cmfd.setLatticeStructure(100,100)
+cmfd.setLatticeStructure(25,25)
 
 ###############################################################################
 ##########################   Creating the Geometry   ##########################
@@ -368,7 +368,8 @@ plotter.plot_materials(geometry, gridsize=1000)
 
 log.py_printf('NORMAL', 'Initializing the track generator...')
 
-track_generator = TrackGenerator(geometry, num_azim, track_spacing)
+track_generator = ModularTrackGenerator(geometry, num_azim, track_spacing)
+track_generator.setLatticeStructure(25,25)
 track_generator.generateTracks()
 
 plotter.plot_flat_source_regions(geometry, gridsize=1000)
@@ -377,7 +378,7 @@ plotter.plot_flat_source_regions(geometry, gridsize=1000)
 ###########################   Running a Simulation   ##########################
 ###############################################################################
 
-solver = CPUSolver(geometry, track_generator)
+solver = ModularCPUSolver(geometry, track_generator)
 solver.setSourceConvergenceThreshold(tolerance)
 solver.setNumThreads(num_threads)
 solver.convergeSource(max_iters)
