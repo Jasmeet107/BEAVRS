@@ -7,12 +7,14 @@ group_types = ['2-group/','8-group/']
 
 materials = {}
 
+
 # create materials for each assembly and number of groups
 for group in group_types:
   materials[group[0]] = {}
   for name in assembly_names:
     if not os.path.isfile('casmo-data/'+ group[0] + '-group/' + name + '-avg-materials.hdf5'):
       generate([name], [group])
+      ## only runs when these files don't exist already!! 
 
     materials[group[0]][name] = materialize.materialize('casmo-data/'+ group[0] + '-group/' + name + '-avg-materials.hdf5')
 
