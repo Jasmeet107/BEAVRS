@@ -15,7 +15,7 @@ def importxsFromCasmo(name, group):
 
 
 
-def computePinPowerError(solver, pin_directory, assembly_name):
+'''def computePinPowerError(solver, pin_directory, assembly_name):
 
     #finds pin powers from simulation FOR ALL CASES
     f = h5py.File('simulation-state/simulation-state.h5', 'r')
