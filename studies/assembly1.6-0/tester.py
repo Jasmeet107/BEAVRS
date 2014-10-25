@@ -6,7 +6,7 @@ import h5py
 import numpy
 import matplotlib.pyplot as plt
 from beavrs2d import *
-from generatehdf5 import generate_some
+from beavrs2d.generatehdf5 import generate_some
 
 #call these functions at the end: 
 
