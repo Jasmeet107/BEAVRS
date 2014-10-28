@@ -72,4 +72,17 @@ docs/_build/
 #HDF5 Files
 *.hdf5
 */*.hdf5
+*.h5
+*/*.h5
+#Folders containing hdf5 files
+*/simulation-states
+*/fission-rates
 
+#Tracks Files
+*/tracks
+*.data
+*/*.data
+
+#Log Files
+*.pbs.o*
+*.pbs.e*
