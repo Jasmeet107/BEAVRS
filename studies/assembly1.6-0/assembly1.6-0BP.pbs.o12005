@@ -1,0 +1,950 @@
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]        Simulating the BEAVRS 1.6 pct enriched 0 BP assembly...      
+[  TITLE  ]  *******************************************************************
+[  NORMAL ]  Creating surfaces...
+[  NORMAL ]  Creating Cmfd mesh...
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.212230	res = 2.431E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212223	res = 8.786E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212454	res = 1.239E-01
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212466	res = 1.410E-02
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212482	res = 4.671E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212481	res = 2.618E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212484	res = 1.299E-03
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212485	res = 7.132E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212486	res = 3.636E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212486	res = 1.923E-04
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212486	res = 9.742E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212486	res = 5.085E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212486	res = 2.559E-05
+[  NORMAL ]  Iteration 14: 	k_eff = 0.212486	res = 1.335E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................1.6342E+00 sec
+[  RESULT ]  Solution time per unknown............................1.4924E-05 sec
+[  RESULT ]  Solution time per iteration..........................1.0895E-01 sec
+[  RESULT ]  Integration time per segment integration.............3.1039E-08 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]                608              73128              13688            
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.212450	res = 2.440E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212103	res = 8.590E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212115	res = 8.484E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212109	res = 7.948E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212114	res = 3.652E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212112	res = 1.607E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212114	res = 8.163E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212114	res = 4.157E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212113	res = 2.155E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212112	res = 1.114E-04
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212113	res = 5.888E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212112	res = 3.116E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212113	res = 1.692E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................2.1750E+00 sec
+[  RESULT ]  Solution time per unknown............................1.9862E-05 sec
+[  RESULT ]  Solution time per iteration..........................1.5536E-01 sec
+[  RESULT ]  Integration time per segment integration.............2.1728E-08 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               1120             148960             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213307	res = 2.450E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213077	res = 8.559E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213140	res = 8.004E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213143	res = 7.234E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213149	res = 3.189E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213148	res = 1.406E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213148	res = 7.037E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213147	res = 3.504E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213148	res = 1.819E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213148	res = 9.473E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213149	res = 5.122E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213148	res = 2.785E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213148	res = 1.562E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................2.1381E+00 sec
+[  RESULT ]  Solution time per unknown............................1.9526E-05 sec
+[  RESULT ]  Solution time per iteration..........................1.5272E-01 sec
+[  RESULT ]  Integration time per segment integration.............1.4421E-08 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               1660             220632             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213636	res = 2.454E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213439	res = 8.546E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213486	res = 7.825E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213495	res = 6.584E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213497	res = 2.982E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213496	res = 1.292E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213495	res = 6.494E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213495	res = 3.211E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213495	res = 1.694E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213495	res = 8.906E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213494	res = 4.920E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213495	res = 2.720E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213494	res = 1.548E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................2.3180E+00 sec
+[  RESULT ]  Solution time per unknown............................2.1168E-05 sec
+[  RESULT ]  Solution time per iteration..........................1.6557E-01 sec
+[  RESULT ]  Integration time per segment integration.............1.1660E-08 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               2204             295824             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213029	res = 2.447E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212851	res = 8.538E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212897	res = 7.692E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212892	res = 6.328E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212899	res = 2.895E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212896	res = 1.265E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212897	res = 6.366E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212897	res = 3.150E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212897	res = 1.668E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212897	res = 8.800E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212897	res = 4.875E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212896	res = 2.696E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212896	res = 1.537E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................2.4785E+00 sec
+[  RESULT ]  Solution time per unknown............................2.2634E-05 sec
+[  RESULT ]  Solution time per iteration..........................1.7704E-01 sec
+[  RESULT ]  Integration time per segment integration.............1.0010E-08 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               2748             368456             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213583	res = 2.457E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213251	res = 8.523E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213289	res = 7.663E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213281	res = 6.034E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213287	res = 2.858E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213284	res = 1.248E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213285	res = 6.317E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213286	res = 3.140E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213286	res = 1.668E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213285	res = 8.811E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213286	res = 4.881E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213284	res = 2.701E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213284	res = 1.589E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................2.4421E+00 sec
+[  RESULT ]  Solution time per unknown............................2.2301E-05 sec
+[  RESULT ]  Solution time per iteration..........................1.7443E-01 sec
+[  RESULT ]  Integration time per segment integration.............8.2253E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               3288             441816             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.212877	res = 2.445E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212649	res = 8.532E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212691	res = 7.631E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212689	res = 5.954E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212694	res = 2.760E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212692	res = 1.195E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212692	res = 6.052E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212692	res = 2.992E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212692	res = 1.602E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212691	res = 8.506E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212692	res = 4.752E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212692	res = 2.645E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212692	res = 1.508E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................2.4900E+00 sec
+[  RESULT ]  Solution time per unknown............................2.2739E-05 sec
+[  RESULT ]  Solution time per iteration..........................1.7785E-01 sec
+[  RESULT ]  Integration time per segment integration.............7.1792E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               3836             516120             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213422	res = 2.453E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213135	res = 8.526E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213155	res = 7.591E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213155	res = 5.711E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213160	res = 2.774E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213158	res = 1.195E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213159	res = 6.076E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213159	res = 3.010E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213158	res = 1.613E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213157	res = 8.565E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213159	res = 4.786E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213158	res = 2.683E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213159	res = 1.525E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................3.3143E+00 sec
+[  RESULT ]  Solution time per unknown............................3.0266E-05 sec
+[  RESULT ]  Solution time per iteration..........................2.3673E-01 sec
+[  RESULT ]  Integration time per segment integration.............8.3591E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               4380             590008             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213556	res = 2.455E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213311	res = 8.522E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213346	res = 7.566E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213345	res = 5.732E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213348	res = 2.779E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213347	res = 1.201E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213347	res = 6.087E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213346	res = 3.010E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213346	res = 1.608E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213347	res = 8.536E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213346	res = 4.763E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213346	res = 2.650E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213347	res = 1.509E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................3.3858E+00 sec
+[  RESULT ]  Solution time per unknown............................3.0920E-05 sec
+[  RESULT ]  Solution time per iteration..........................2.4184E-01 sec
+[  RESULT ]  Integration time per segment integration.............7.6024E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               4932             662744             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213939	res = 2.462E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213678	res = 8.518E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213696	res = 7.588E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213697	res = 5.718E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213701	res = 2.731E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213699	res = 1.191E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213698	res = 6.061E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213698	res = 3.014E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213698	res = 1.616E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213698	res = 8.592E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213697	res = 4.799E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213698	res = 2.674E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213697	res = 1.528E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................3.6141E+00 sec
+[  RESULT ]  Solution time per unknown............................3.3004E-05 sec
+[  RESULT ]  Solution time per iteration..........................2.5815E-01 sec
+[  RESULT ]  Integration time per segment integration.............7.3099E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               5472             735736             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213391	res = 2.452E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213168	res = 8.520E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213223	res = 7.559E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213218	res = 5.691E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213221	res = 2.716E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213220	res = 1.190E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213219	res = 6.048E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213220	res = 3.001E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213220	res = 1.607E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213220	res = 8.531E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213220	res = 4.762E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213220	res = 2.644E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213220	res = 1.507E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................3.6863E+00 sec
+[  RESULT ]  Solution time per unknown............................3.3664E-05 sec
+[  RESULT ]  Solution time per iteration..........................2.6331E-01 sec
+[  RESULT ]  Integration time per segment integration.............6.7631E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               6024             811112             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.212913	res = 2.445E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212705	res = 8.529E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212748	res = 7.582E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212747	res = 5.648E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212751	res = 2.699E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212750	res = 1.170E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212750	res = 5.977E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212749	res = 2.959E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212749	res = 1.594E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212749	res = 8.472E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212749	res = 4.750E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212749	res = 2.641E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212749	res = 1.511E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................3.8592E+00 sec
+[  RESULT ]  Solution time per unknown............................3.5242E-05 sec
+[  RESULT ]  Solution time per iteration..........................2.7566E-01 sec
+[  RESULT ]  Integration time per segment integration.............6.4877E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               6576             885192             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213053	res = 2.449E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212803	res = 8.522E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212838	res = 7.575E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212835	res = 5.552E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212839	res = 2.677E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212837	res = 1.175E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212836	res = 5.998E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212838	res = 2.974E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212837	res = 1.601E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212837	res = 8.504E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212838	res = 4.763E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212838	res = 2.660E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212838	res = 1.513E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................4.3517E+00 sec
+[  RESULT ]  Solution time per unknown............................3.9740E-05 sec
+[  RESULT ]  Solution time per iteration..........................3.1084E-01 sec
+[  RESULT ]  Integration time per segment integration.............6.7604E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               7116             957896             13688             
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.212953	res = 2.448E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212672	res = 8.525E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212694	res = 7.535E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212689	res = 5.506E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212694	res = 2.683E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212693	res = 1.168E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212692	res = 5.959E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212693	res = 2.956E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212693	res = 1.591E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212691	res = 8.470E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212692	res = 4.752E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212692	res = 2.650E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212692	res = 1.514E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................4.0732E+00 sec
+[  RESULT ]  Solution time per unknown............................3.7197E-05 sec
+[  RESULT ]  Solution time per iteration..........................2.9094E-01 sec
+[  RESULT ]  Integration time per segment integration.............5.8762E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               7660             1031512             13688            
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213169	res = 2.450E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212943	res = 8.521E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212973	res = 7.548E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212969	res = 5.553E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212974	res = 2.692E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212972	res = 1.181E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212972	res = 6.030E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212973	res = 2.988E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212973	res = 1.607E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212973	res = 8.529E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212971	res = 4.773E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212972	res = 2.679E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212973	res = 1.530E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................4.5504E+00 sec
+[  RESULT ]  Solution time per unknown............................4.1554E-05 sec
+[  RESULT ]  Solution time per iteration..........................3.2503E-01 sec
+[  RESULT ]  Integration time per segment integration.............6.1311E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               8208             1104424             13688            
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213941	res = 2.461E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213668	res = 8.514E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213691	res = 7.541E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213687	res = 5.512E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213692	res = 2.690E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213689	res = 1.180E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213689	res = 6.028E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213689	res = 2.981E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213689	res = 1.604E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213690	res = 8.509E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213689	res = 4.768E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213689	res = 2.651E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213690	res = 1.513E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................4.1960E+00 sec
+[  RESULT ]  Solution time per unknown............................3.8318E-05 sec
+[  RESULT ]  Solution time per iteration..........................2.9971E-01 sec
+[  RESULT ]  Integration time per segment integration.............5.3006E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               8760             1177984             13688            
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213891	res = 2.460E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213650	res = 8.510E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213691	res = 7.521E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213685	res = 5.457E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213690	res = 2.654E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213688	res = 1.166E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213688	res = 5.953E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213688	res = 2.949E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213688	res = 1.590E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213688	res = 8.458E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213688	res = 4.743E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213688	res = 2.640E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213688	res = 1.510E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................4.8279E+00 sec
+[  RESULT ]  Solution time per unknown............................4.4089E-05 sec
+[  RESULT ]  Solution time per iteration..........................3.4485E-01 sec
+[  RESULT ]  Integration time per segment integration.............5.7350E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               9312             1252720             13688            
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213563	res = 2.456E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213278	res = 8.515E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213308	res = 7.541E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213302	res = 5.483E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213307	res = 2.674E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213305	res = 1.185E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213307	res = 6.052E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213306	res = 2.999E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213306	res = 1.611E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213306	res = 8.544E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213306	res = 4.778E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213306	res = 2.650E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213306	res = 1.522E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................4.3546E+00 sec
+[  RESULT ]  Solution time per unknown............................3.9766E-05 sec
+[  RESULT ]  Solution time per iteration..........................3.1104E-01 sec
+[  RESULT ]  Integration time per segment integration.............4.8900E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               9848             1325168             13688            
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.212492	res = 2.440E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212248	res = 8.529E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212280	res = 7.553E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212277	res = 5.500E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212282	res = 2.654E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212280	res = 1.166E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212281	res = 5.955E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212281	res = 2.948E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212281	res = 1.589E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212281	res = 8.451E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212281	res = 4.740E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212281	res = 2.636E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212281	res = 1.508E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................4.9792E+00 sec
+[  RESULT ]  Solution time per unknown............................4.5470E-05 sec
+[  RESULT ]  Solution time per iteration..........................3.5565E-01 sec
+[  RESULT ]  Integration time per segment integration.............5.2873E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               10400             1401368             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.212682	res = 2.443E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212420	res = 8.526E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212451	res = 7.544E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212448	res = 5.485E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212453	res = 2.658E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212450	res = 1.170E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212451	res = 5.985E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212449	res = 2.956E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212450	res = 1.594E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212449	res = 8.449E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212450	res = 4.740E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212450	res = 2.642E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212450	res = 1.505E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................5.3764E+00 sec
+[  RESULT ]  Solution time per unknown............................4.9097E-05 sec
+[  RESULT ]  Solution time per iteration..........................3.8403E-01 sec
+[  RESULT ]  Integration time per segment integration.............5.4221E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               10956             1475552             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213990	res = 2.461E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213747	res = 8.512E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213773	res = 7.556E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213772	res = 5.434E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213777	res = 2.649E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213775	res = 1.158E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213775	res = 5.921E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213775	res = 2.931E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213776	res = 1.581E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213775	res = 8.418E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213775	res = 4.727E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213775	res = 2.629E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213775	res = 1.505E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................5.0577E+00 sec
+[  RESULT ]  Solution time per unknown............................4.6188E-05 sec
+[  RESULT ]  Solution time per iteration..........................3.6127E-01 sec
+[  RESULT ]  Integration time per segment integration.............4.8641E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               11500             1547328             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.211957	res = 2.434E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.211711	res = 8.534E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.211737	res = 7.524E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.211738	res = 5.398E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.211741	res = 2.637E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.211740	res = 1.154E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.211740	res = 5.923E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.211740	res = 2.932E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.211739	res = 1.586E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.211739	res = 8.441E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.211740	res = 4.744E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.211740	res = 2.651E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.211739	res = 1.512E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................5.1339E+00 sec
+[  RESULT ]  Solution time per unknown............................4.6883E-05 sec
+[  RESULT ]  Solution time per iteration..........................3.6671E-01 sec
+[  RESULT ]  Integration time per segment integration.............4.7120E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               12036             1621312             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213271	res = 2.451E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213014	res = 8.521E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213038	res = 7.545E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213034	res = 5.411E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213038	res = 2.614E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213036	res = 1.142E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213036	res = 5.851E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213034	res = 2.899E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213034	res = 1.568E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213035	res = 8.357E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213035	res = 4.701E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213035	res = 2.618E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213035	res = 1.503E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................5.1228E+00 sec
+[  RESULT ]  Solution time per unknown............................4.6782E-05 sec
+[  RESULT ]  Solution time per iteration..........................3.6591E-01 sec
+[  RESULT ]  Integration time per segment integration.............4.4931E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               12596             1696656             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213647	res = 2.456E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213376	res = 8.517E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213393	res = 7.528E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213393	res = 5.352E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213398	res = 2.634E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213396	res = 1.150E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213395	res = 5.873E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213396	res = 2.913E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213396	res = 1.573E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213396	res = 8.393E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213396	res = 4.714E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213396	res = 2.629E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213396	res = 1.504E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................5.9489E+00 sec
+[  RESULT ]  Solution time per unknown............................5.4325E-05 sec
+[  RESULT ]  Solution time per iteration..........................4.2492E-01 sec
+[  RESULT ]  Integration time per segment integration.............5.0020E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               13140             1769784             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213336	res = 2.453E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213091	res = 8.518E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213113	res = 7.512E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213111	res = 5.364E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213116	res = 2.624E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213114	res = 1.150E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213115	res = 5.890E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213115	res = 2.923E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213114	res = 1.580E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213115	res = 8.431E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213115	res = 4.741E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213115	res = 2.637E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213114	res = 1.509E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................6.3635E+00 sec
+[  RESULT ]  Solution time per unknown............................5.8112E-05 sec
+[  RESULT ]  Solution time per iteration..........................4.5453E-01 sec
+[  RESULT ]  Integration time per segment integration.............5.1370E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               13696             1843368             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213543	res = 2.456E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213283	res = 8.515E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213307	res = 7.543E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213303	res = 5.379E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213308	res = 2.634E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213307	res = 1.152E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213306	res = 5.904E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213307	res = 2.928E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213306	res = 1.581E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213306	res = 8.418E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213306	res = 4.721E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213306	res = 2.628E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213306	res = 1.502E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................6.1999E+00 sec
+[  RESULT ]  Solution time per unknown............................5.6618E-05 sec
+[  RESULT ]  Solution time per iteration..........................4.4285E-01 sec
+[  RESULT ]  Integration time per segment integration.............4.8187E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               14228             1914624             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.212024	res = 2.435E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.211744	res = 8.532E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.211765	res = 7.533E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.211759	res = 5.364E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.211763	res = 2.652E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.211760	res = 1.159E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.211760	res = 5.928E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.211759	res = 2.940E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.211758	res = 1.585E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.211758	res = 8.444E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.211758	res = 4.732E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.211758	res = 2.636E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.211757	res = 1.507E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................6.1894E+00 sec
+[  RESULT ]  Solution time per unknown............................5.6522E-05 sec
+[  RESULT ]  Solution time per iteration..........................4.4210E-01 sec
+[  RESULT ]  Integration time per segment integration.............4.6267E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               14788             1990720             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213194	res = 2.450E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212957	res = 8.520E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212987	res = 7.546E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212985	res = 5.372E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212991	res = 2.640E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212988	res = 1.154E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212988	res = 5.911E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212989	res = 2.932E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212988	res = 1.582E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212988	res = 8.431E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212988	res = 4.730E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212988	res = 2.634E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212988	res = 1.510E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................6.4770E+00 sec
+[  RESULT ]  Solution time per unknown............................5.9148E-05 sec
+[  RESULT ]  Solution time per iteration..........................4.6264E-01 sec
+[  RESULT ]  Integration time per segment integration.............4.6646E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               15344             2066264             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.212763	res = 2.444E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212531	res = 8.524E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212571	res = 7.514E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212568	res = 5.364E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212572	res = 2.620E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212570	res = 1.145E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212570	res = 5.874E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212570	res = 2.911E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212570	res = 1.574E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212570	res = 8.380E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212570	res = 4.708E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212570	res = 2.621E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212570	res = 1.500E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................6.2331E+00 sec
+[  RESULT ]  Solution time per unknown............................5.6921E-05 sec
+[  RESULT ]  Solution time per iteration..........................4.4522E-01 sec
+[  RESULT ]  Integration time per segment integration.............4.3364E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               15872             2138976             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213728	res = 2.459E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.213456	res = 8.512E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.213482	res = 7.529E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.213478	res = 5.377E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.213483	res = 2.631E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.213480	res = 1.149E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.213481	res = 5.883E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.213481	res = 2.923E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.213481	res = 1.579E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.213481	res = 8.428E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.213481	res = 4.733E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.213480	res = 2.640E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.213481	res = 1.528E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................6.3756E+00 sec
+[  RESULT ]  Solution time per unknown............................5.8223E-05 sec
+[  RESULT ]  Solution time per iteration..........................4.5540E-01 sec
+[  RESULT ]  Integration time per segment integration.............4.2953E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               16420             2208832             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------
+[  NORMAL ]  Initializing the track generator...
+[  NORMAL ]  Ray tracing for track segmentation...
+[  NORMAL ]  Dumping tracks to file...
+[  NORMAL ]  Converging the source...
+[  NORMAL ]  Iteration 0: 	k_eff = 1.000000	res = 0.000E+00
+[  NORMAL ]  Iteration 1: 	k_eff = 0.213175	res = 2.451E+03
+[  NORMAL ]  Iteration 2: 	k_eff = 0.212928	res = 8.517E-01
+[  NORMAL ]  Iteration 3: 	k_eff = 0.212959	res = 7.519E-02
+[  NORMAL ]  Iteration 4: 	k_eff = 0.212955	res = 5.341E-03
+[  NORMAL ]  Iteration 5: 	k_eff = 0.212960	res = 2.624E-03
+[  NORMAL ]  Iteration 6: 	k_eff = 0.212958	res = 1.147E-03
+[  NORMAL ]  Iteration 7: 	k_eff = 0.212959	res = 5.878E-04
+[  NORMAL ]  Iteration 8: 	k_eff = 0.212958	res = 2.921E-04
+[  NORMAL ]  Iteration 9: 	k_eff = 0.212958	res = 1.578E-04
+[  NORMAL ]  Iteration 10: 	k_eff = 0.212957	res = 8.430E-05
+[  NORMAL ]  Iteration 11: 	k_eff = 0.212958	res = 4.733E-05
+[  NORMAL ]  Iteration 12: 	k_eff = 0.212958	res = 2.649E-05
+[  NORMAL ]  Iteration 13: 	k_eff = 0.212957	res = 1.510E-05
+[  TITLE  ]  *******************************************************************
+[  TITLE  ]                             TIMING REPORT                           
+[  TITLE  ]  *******************************************************************
+[  RESULT ]  Total time to solution...............................7.0250E+00 sec
+[  RESULT ]  Solution time per unknown............................6.4153E-05 sec
+[  RESULT ]  Solution time per iteration..........................5.0178E-01 sec
+[  RESULT ]  Integration time per segment integration.............4.5810E-09 sec
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]             # tracks          # segments          # FSRs
+[SEPARATOR]  -------------------------------------------------------------------
+[  RESULT ]               16960             2282024             13688           
+[  RESULT ]  ...  
+[SEPARATOR]  -------------------------------------------------------------------

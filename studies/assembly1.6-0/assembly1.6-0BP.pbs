@@ -19,4 +19,7 @@ PATH=$PBS_O_PATH
 ######################################
  
 #PBS -k eo
-python assembly1.6-0BP.py -t 12 -i 100000 -a 32 -s 0.05
+
+export PYTHONPATH=/home/jasmeet/BEAVRS/:$PYTHONPATH
+
+python assembly1.6-0BP.py -t 12 
