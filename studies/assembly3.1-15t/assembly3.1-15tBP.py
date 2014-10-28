@@ -4,6 +4,12 @@ from openmoc import *
 import openmoc.log as log
 import openmoc.plotter as plotter
 from openmoc.options import Options
+import openmoc.process as process
+from openmoc.compatible.casmo import *
+from beavrs2d.tester import *
+
+group_types = ['2-group/','8-group/']
+importxsFromCasmo('pwru160c00','2-group/')
 
 ###############################################################################
 #######################   Main Simulation Parameters   ########################
@@ -131,7 +137,6 @@ for num_azim in num_azims:
 	solver.convergeSource(max_iters)
 	solver.printTimerReport()
 	
-	process.store_simulation_state(solver, pin_powers=True, use_hdf5=True, \
-																filename= "simstate160.h5", append=True)
+	process.store_simulation_state(solver, fission_rates=True, use_hdf5=True, append=True)
 																
 
