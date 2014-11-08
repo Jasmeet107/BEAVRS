@@ -12,13 +12,55 @@ from beavrs2d.generatehdf5 import generate_some
 
 def importxsFromCasmo(name, group): 
 	generate_some(name, group)
+	
+	
+def plotter(X, Y, title, x_name, y_name, x_scale, y_scale, filename, num_datasets, legend = []):
+	fig = plt.figure()
+	colors = ['b', 'g', 'r', 'k', 'm']
+	for i in range(num_datasets):
+		plt.plot(X[i], Y[i], colors[i] + 'o-', ms = 10, lw = 2)
+	if x_name == 'Track Spacing':
+		plt.axis([x_scale, 0, 0, y_scale])
+	else:
+		plt.axis([0, x_scale, 0, y_scale])
+	plt.title(title)
+	plt.xlabel(x_name)
+	plt.ylabel(y_name)
+	plt.grid()
+	if num_datasets > 1:
+		plt.legend(legend)
+	plt.show()
+	fig.savefig(filename)
+	
+def computeKinfError(solver):
+
+	#finds kinf from simulation for all cases
+	f = h5py.File('simulation-states/simulation-state.h5', 'r')
+	all_kinf = numpy.zeros((31))
+	timestamps = f.keys()
+	for timestamp in timestamps: 
+		calculated_kinf = f[timestamp]['keff'][...]
+		num_angles = f[timestamp]['# azimuthal angles']
+		all_kinf[num_angles/4-1] = calculated_kinf
+	f.close()
+	
+	#finds kinf from casmo
+	f = h5py.File('casmo-reference/casmo-data.h5')
+	actual_kinf = f['Casmo Data']['K-Infinity']
+	f.close()
+
+	kinf_error = numpy.zeros((31))
+	for i in enumerate(all_kinf): 
+		kinf_error[i] = abs((all_kinf[i] - actual_kinf)/(actual_kinf))
+
+	return kinf_error
 
 
 
 '''def computePinPowerError(solver, pin_directory, assembly_name):
 
     #finds pin powers from simulation FOR ALL CASES
-    f = h5py.File('simulation-state/simulation-state.h5', 'r')
+    f = h5py.File('simulation-states/simulation-state.h5', 'r')
     allPinPowers = numpy.zeros((number of cases, width of assembly, length of assembly)) 
     timestamps = f.keys() #something like this
     for timestamp in timestamps: 

@@ -6,11 +6,11 @@ import openmoc.plotter as plotter
 from openmoc.options import Options
 import openmoc.process as process
 from openmoc.compatible.casmo import *
-from tester import *
+from beavrs2d.tester import *
 
 group_types = ['2-group/','8-group/']
-importxsFromCasmo('pwru160c00','2-group/')
-
+importxsFromCasmo('pwru160c00','8-group/') #changed to 8-group
+assembly_name = 'pwru160c00' #make sure it's the right assembly!!
 
 ###############################################################################
 #######################   Main Simulation Parameters   ########################
@@ -26,7 +26,8 @@ max_iters = options.getMaxIterations()
 
 log.set_log_level('NORMAL')
 
-log.py_printf('TITLE', 'Simulating the BEAVRS 1.6 pct enriched 0 BP assembly...')
+log.py_printf('TITLE', 'Simulating the BEAVRS 1.6 pct enriched 0 BP assembly...') 
+#right assembly here too!!
   
 group = '8'
 assembly = CellFill(universe=0, universe_fill=lattices[group]['1.6-0BP'].getId())
@@ -105,7 +106,20 @@ geometry.addLattice(lattices[group]['1.6-0BP'])
 # initialize flat source regions
 geometry.initializeFlatSourceRegions()
 
-num_azims = [i for i in range(4, 128, 4)]
+num_azims = [i for i in range(4, 132, 4)]
+
+#removes all previous results files for this assembly
+os.system('rm ' + 'results/' + assembly_name + '-numazim-errors.h5')
+
+#creates directory for results files if doesn't already exist
+if not os.path.exists('results'):
+    os.makedirs('results')
+    
+#creates hdf5 file to store results
+f = h5py.File('results/' + assembly_name + '-numazim-errors.h5')
+f.attrs['Energy Groups'] = group
+current_test = f.create_group('Azimuthal Angles Tests')
+
 
 for num_azim in num_azims: 
 
@@ -114,7 +128,6 @@ for num_azim in num_azims:
 	###############################################################################
 
 	log.py_printf('NORMAL', 'Initializing the track generator...')
-
 	track_generator = TrackGenerator(geometry, num_azim, track_spacing)
 	track_generator.generateTracks()
 
@@ -128,6 +141,11 @@ for num_azim in num_azims:
 	solver.convergeSource(max_iters)
 	solver.printTimerReport()
 	
-	process.store_simulation_state(solver, fission_rates=True, use_hdf5=True, append=True)
+	if num_azim == num_azims[0]:
+		process.store_simulation_state(solver, fission_rates=True, use_hdf5=True, append=False)
+	else: 
+		process.store_simulation_state(solver, fission_rates=True, use_hdf5=True, append=True)
+
+f.close()
 																
 
