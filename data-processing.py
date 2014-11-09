@@ -36,14 +36,15 @@ for assembly in assemblies:
 	for i in range(num_cases): 
 		kinf_error[i] = ((all_kinf[i] - actual_kinf)*1e5)
 
-	#plots kinf
-	fig = plt.figure()
-	plt.plot(all_azim, kinf_error)
-	plt.xlabel('# Azimuthal Angles')
-	plt.ylabel('Error [pcm]')
-	plt.title ('Error in K-Infinity') 
-	plt.legend(assemblies)
-	plt.savefig('studies/'+assembly+'/kinf-error.png')
+#plots kinf
+fig = plt.figure()
+plt.plot(all_azim, kinf_error)
+plt.xlabel('# Azimuthal Angles')
+plt.ylabel('Error [pcm]')
+plt.title ('Error in K-Infinity') 
+plt.legend(assemblies)
+#plt.savefig('studies/'+assembly+'/kinf-error.png')
+plt.savefig('kinf-error.png')
 	
 	
 	
