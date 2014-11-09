@@ -115,7 +115,7 @@ geometry.addLattice(lattices[group]['3.1-6lBP'])
 #initialize flat source regions
 geometry.initializeFlatSourceRegions()
 
-num_azims = [i for i in range(4, 128, 4)]
+num_azims = [i for i in range(4, 132, 4)]
 
 for num_azim in num_azims: 
 
