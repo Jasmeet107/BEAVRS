@@ -12,7 +12,7 @@ from beavrs2d.generatehdf5 import generate_some
 def importxsFromCasmo(name, group): 
 	generate_some(name, group)
 	
-def computeKinfError():
+'''def computeKinfError():
 
 	#finds kinf from simulation for all cases
 	f = h5py.File('simulation-states/simulation-state.h5', 'r')
@@ -59,7 +59,7 @@ def plotter(X, Y, title, x_name, y_name, x_scale, y_scale, filename, num_dataset
 
 
 
-'''def computePinPowerError(solver, pin_directory, assembly_name):
+def computePinPowerError(solver, pin_directory, assembly_name):
 
     #finds pin powers from simulation FOR ALL CASES
     f = h5py.File('simulation-state/simulation-state.h5', 'r')

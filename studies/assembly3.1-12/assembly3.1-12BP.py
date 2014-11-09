@@ -6,6 +6,8 @@ import openmoc.plotter as plotter
 from openmoc.options import Options
 import openmoc.process as process
 from openmoc.compatible.casmo import *
+from beavrs2d.tester import *
+
 
 group_types = ['2-group/','8-group/']
 importxsFromCasmo('pwru310w12','8-group/')
