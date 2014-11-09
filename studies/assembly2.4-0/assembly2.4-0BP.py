@@ -9,7 +9,7 @@ from openmoc.compatible.casmo import *
 from beavrs2d.tester import *
 
 group_types = ['2-group/','8-group/']
-importxsFromCasmo('pwru240c00','2-group/')
+importxsFromCasmo('pwru240c00','8-group/')
 
 ###############################################################################
 #######################   Main Simulation Parameters   ########################
@@ -25,7 +25,7 @@ max_iters = options.getMaxIterations()
 
 log.set_log_level('NORMAL')
 
-log.py_printf('TITLE', 'Simulating the BEAVRS 1.6 pct enriched 0 BP assembly...')
+log.py_printf('TITLE', 'Simulating the BEAVRS 2.4 pct enriched 0 BP assembly...')
   
 group = '8'
 assembly = CellFill(universe=0, universe_fill= lattices[group]['2.4-0BP'].getId())
@@ -106,6 +106,7 @@ geometry.addLattice(lattices[group]['2.4-0BP'])
 geometry.initializeFlatSourceRegions()
 num_azims = [i for i in range(4, 128, 4)]
 
+
 for num_azim in num_azims: 
 
 	###############################################################################
@@ -113,7 +114,6 @@ for num_azim in num_azims:
 	###############################################################################
 
 	log.py_printf('NORMAL', 'Initializing the track generator...')
-
 	track_generator = TrackGenerator(geometry, num_azim, track_spacing)
 	track_generator.generateTracks()
 
@@ -127,6 +127,8 @@ for num_azim in num_azims:
 	solver.convergeSource(max_iters)
 	solver.printTimerReport()
 	
-	process.store_simulation_state(solver, fission_rates=True, use_hdf5=True, append=True)
-																
-
+	if num_azim == num_azims[0]:
+		process.store_simulation_state(solver, fission_rates=True, use_hdf5=True, append=False)
+	else: 
+		process.store_simulation_state(solver, fission_rates=True, use_hdf5=True, append=True)
+					

@@ -108,19 +108,6 @@ geometry.initializeFlatSourceRegions()
 
 num_azims = [i for i in range(4, 132, 4)]
 
-#removes all previous results files for this assembly
-os.system('rm ' + 'results/' + assembly_name + '-numazim-errors.h5')
-
-#creates directory for results files if doesn't already exist
-if not os.path.exists('results'):
-    os.makedirs('results')
-    
-#creates hdf5 file to store results
-f = h5py.File('results/' + assembly_name + '-numazim-errors.h5')
-f.attrs['Energy Groups'] = group
-current_test = f.create_group('Azimuthal Angles Tests')
-
-
 for num_azim in num_azims: 
 
 	###############################################################################
@@ -145,7 +132,4 @@ for num_azim in num_azims:
 		process.store_simulation_state(solver, fission_rates=True, use_hdf5=True, append=False)
 	else: 
 		process.store_simulation_state(solver, fission_rates=True, use_hdf5=True, append=True)
-
-f.close()
-																
-
+		
