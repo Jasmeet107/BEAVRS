@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 assemblies = ['assembly1.6-0', 'assembly2.4-0', 'assembly2.4-12', 'assembly2.4-16', 'assembly3.1-0', 'assembly3.1-6b', 'assembly3.1-6l', 'assembly3.1-6r', 'assembly3.1-6t', 'assembly3.1-12', 'assembly3.1-15b', 'assembly3.1-15l', 'assembly3.1-15r', 'assembly3.1-15t', 'assembly3.1-20']
 
-num_cases = 31
+num_cases = 32
 for assembly in assemblies: 
 
 	directory = 'studies/' + assembly + '/simulation-states/' 
@@ -45,9 +45,10 @@ for assembly in assemblies:
 	plt.legend(assemblies)
 	plt.savefig('studies/'+assembly+'/kinf-error.png')
 	
+	
+	
+	
 #to plot them all, make a big numpy array
-
-
 #when plotting pin powers, plot max and mean vs angle
 #account for 0 fission rate pins when calculating mean (take them out of average by dividing by less numbers)
 
