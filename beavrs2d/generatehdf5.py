@@ -29,7 +29,7 @@ def generate (assembly_names, group_types):
       assembly.averageXSGenerator()
       assembly.exportAvgXSToHDF5(name,directory = 'casmo-data/'+group)
       
-def generate_some (name, group):
+def generate_some (name, group, direc):
   assembly = Casmo()
   assembly.setCellType(1,'fuel')
   assembly.setCellType(2,'gt')
@@ -47,5 +47,5 @@ def generate_some (name, group):
 																			 0.000E+00, 0.000E+00])
   assembly.setXS('CHI', chi)
   assembly.setStringCellTypeArray(assembly.stringCellTypeArray())
-  assembly.export(directory = 'casmo-reference/')
+  assembly.export(directory = direc)
       

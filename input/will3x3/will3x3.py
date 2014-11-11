@@ -153,7 +153,7 @@ geometry.initializeFlatSourceRegions()
 ###############################################################################
 
 log.py_printf('NORMAL', 'Initializing the track generator...')
-track_generator = TrackGenerator(geometry, num_azim, track_spacing)
+track_generator = TrackGenerator(geometry, 32, track_spacing)
 track_generator.generateTracks()
 
 ###############################################################################

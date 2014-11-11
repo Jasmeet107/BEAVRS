@@ -6,10 +6,8 @@ import openmoc.plotter as plotter
 from openmoc.options import Options
 import openmoc.process as process
 from openmoc.compatible.casmo import *
-from beavrs2d.tester import *
 
 group_types = ['2-group/','8-group/']
-importxsFromCasmo('pwru160c00','8-group/') #changed to 8-group
 assembly_name = 'pwru160c00' #make sure it's the right assembly!!
 
 ###############################################################################
@@ -29,7 +27,7 @@ log.set_log_level('NORMAL')
 log.py_printf('TITLE', 'Simulating the BEAVRS 1.6 pct enriched 0 BP assembly...') 
 #right assembly here too!!
   
-group = '8'
+group = '2'
 assembly = CellFill(universe=0, universe_fill=lattices[group]['1.6-0BP'].getId())
 
 ###############################################################################

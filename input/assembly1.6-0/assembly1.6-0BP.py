@@ -98,13 +98,14 @@ geometry.addLattice(lattices[group]['1.6-0BP'])
 # initialize flat source regions
 geometry.initializeFlatSourceRegions()
 
+
 ###############################################################################
 ########################   Creating the TrackGenerator   ######################
 ###############################################################################
 
 log.py_printf('NORMAL', 'Initializing the track generator...')
 
-track_generator = TrackGenerator(geometry, num_azim, track_spacing)
+track_generator = TrackGenerator(geometry, 4, track_spacing)
 track_generator.generateTracks()
 
 ###############################################################################
