@@ -9,7 +9,7 @@ from beavrs2d import *
 from beavrs2d.generatehdf5 import generate_some
 
 
-assemblies = {'assembly1.6-0':'pwru160c00', 
+'''assemblies = {'assembly1.6-0':'pwru160c00', 
 							'assembly2.4-0':'pwru240c00', 
 							'assembly2.4-12':'pwru240w12', 
 							'assembly2.4-16':'pwru240w16', 
@@ -24,7 +24,9 @@ assemblies = {'assembly1.6-0':'pwru160c00',
 							'assembly3.1-15r':'pwru310w15', 
 							'assembly3.1-15t':'pwru310w15', 
 							'assembly3.1-16':'pwru310w16',
-							'assembly3.1-20':'pwru310w20'}
+							'assembly3.1-20':'pwru310w20'}'''
+							
+assemblies = {'assembly3.1-16':'pwru310w16'}
 							
 
 for assembly in assemblies: 

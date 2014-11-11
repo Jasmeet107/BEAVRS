@@ -17,4 +17,3 @@ for group in group_types:
       ## only runs when these files don't exist already!! 
 
     materials[group[0]][name] = materialize.materialize('casmo-data/'+ group[0] + '-group/' + name + '-avg-materials.hdf5')
-
