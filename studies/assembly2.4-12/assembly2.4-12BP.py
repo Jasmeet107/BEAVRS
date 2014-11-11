@@ -9,7 +9,6 @@ from openmoc.compatible.casmo import *
 from beavrs2d.tester import *
 
 group_types = ['2-group/','8-group/']
-importxsFromCasmo('pwru240w12','8-group/')
 
 ###############################################################################
 #######################   Main Simulation Parameters   ########################

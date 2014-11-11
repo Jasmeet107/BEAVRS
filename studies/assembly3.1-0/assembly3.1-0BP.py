@@ -10,7 +10,6 @@ from beavrs2d.tester import *
 
 
 group_types = ['2-group/','8-group/']
-importxsFromCasmo('pwru310c00','8-group/')
 
 ###############################################################################
 #######################   Main Simulation Parameters   ########################
