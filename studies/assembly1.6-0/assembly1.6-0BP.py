@@ -27,7 +27,7 @@ log.set_log_level('NORMAL')
 log.py_printf('TITLE', 'Simulating the BEAVRS 1.6 pct enriched 0 BP assembly...') 
 #right assembly here too!!
   
-group = '2'
+group = '8'
 assembly = CellFill(universe=0, universe_fill=lattices[group]['1.6-0BP'].getId())
 
 ###############################################################################

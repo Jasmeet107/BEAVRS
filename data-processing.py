@@ -2,7 +2,11 @@ import h5py
 import numpy
 import matplotlib.pyplot as plt
 
-assemblies = ['assembly1.6-0', 'assembly2.4-0', 'assembly2.4-12', 'assembly2.4-16', 'assembly3.1-0', 'assembly3.1-6b', 'assembly3.1-6l', 'assembly3.1-6r', 'assembly3.1-6t', 'assembly3.1-12', 'assembly3.1-15b', 'assembly3.1-15l', 'assembly3.1-15r', 'assembly3.1-15t', 'assembly3.1-16', 'assembly3.1-20']
+#assemblies = ['assembly1.6-0', 'assembly2.4-0', 'assembly2.4-12', 'assembly2.4-16', 'assembly3.1-0', 'assembly3.1-6b', 'assembly3.1-6l', 'assembly3.1-6r', 'assembly3.1-6t', 'assembly3.1-12', 'assembly3.1-15b', 'assembly3.1-15l', 'assembly3.1-15r', 'assembly3.1-15t', 'assembly3.1-16', 'assembly3.1-20']
+
+#assemblies = ['assembly1.6-0']
+#assemblies = ['assembly2.4-0', 'assembly2.4-12', 'assembly2.4-16']
+assemblies = ['assembly3.1-0', 'assembly3.1-6b', 'assembly3.1-6l', 'assembly3.1-6r', 'assembly3.1-6t', 'assembly3.1-12', 'assembly3.1-15b', 'assembly3.1-15l', 'assembly3.1-15r', 'assembly3.1-15t', 'assembly3.1-16', 'assembly3.1-20']
 
 fig = plt.figure()
 
@@ -42,11 +46,11 @@ for assembly in assemblies:
 	
 plt.xlabel('# Azimuthal Angles')
 plt.ylabel('Error [pcm]')
-plt.title ('Error in K-Infinity for ' + assembly) 
+plt.title ('Error in K-Infinity') 
 plt.legend(assemblies)
 #plt.savefig('studies/'+assembly+'/kinf-error.png')
-plt.savefig('kinf-error.png')
-	
+plt.savefig('kinf-error3.1.png')
+
 	
 	
 	
