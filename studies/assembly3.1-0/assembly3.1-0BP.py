@@ -10,6 +10,8 @@ from beavrs2d.tester import *
 
 
 group_types = ['2-group/','8-group/']
+assembly_name = 'pwru310c00' 
+
 
 ###############################################################################
 #######################   Main Simulation Parameters   ########################
